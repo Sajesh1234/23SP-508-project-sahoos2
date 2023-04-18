@@ -27,9 +27,9 @@
 
 <body>
   
-  <a href="/~23SP_sahoos2/login.php" class="login-button"><button>Login/ Sign Up</button></a>
-  <a herf="/~23SP_sahoos2/teams.php" class="teams-button"><button>Teams</button></a>
-  <a herf="/~23SP_sahoos2/cards.php" class="cards-button"><button>Cards</button></a>
+  <a href = "/~23SP_sahoos2/login.php" class="login-button"><button>Login/ Sign Up</button></a>
+  <a herf = "/~23SP_sahoos2/teams.php" class="teams-button"><button>Teams</button></a>
+  <a herf = "/~23SP_sahoos2/cards.php" class="cards-button"><button>Cards</button></a>
   
 </body>
 </html>
