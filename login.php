@@ -1,7 +1,8 @@
 <html>
 <head>
 <title> TCG Login </title>
-<?php require_once('header.php'); ?>
+<?php	require_once('login-locked.php');
+		require_once('header.php'); ?>
 </head>
 <style>
 .btn { 
@@ -92,8 +93,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 
 </style>
 
-<?php require_once('connection.php'); 
-require_once('login-locked.php'); ?>
+<?php require_once('connection.php'); ?>
 <body>
 <div class="login">
 <h1>LOGIN</h1>
