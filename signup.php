@@ -6,9 +6,9 @@
 
 <?php require_once('connection.php'); 
 
-if(!isset($_POST['action']))
+if(!isset($_POST['action']) && )
 {
-	echo $_POST['firstname'];
+	echo $_POST['action'];
 }
 
 
