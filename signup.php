@@ -100,10 +100,10 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 		<form action="login-landing.php" method="post">
 			<label for="Email">Email:</label>
 			<input type="text" name="Email" placeholder="Email" required="required" />
-			<label for="First Name">First Name:</label>
+			<label for="firstname">First Name:</label>
 			<input type="text" name="firstname" placeholder="First Name" required="required" />
-			<label for="Last Name">Last Name:</label>
-			<input type="text" name="Last Name" placeholder="Last Name" required="required" />
+			<label for="lastname">Last Name:</label>
+			<input type="text" name="lastname" placeholder="Last Name" required="required" />
 			<label for="Date of Birth">Date of Birth:</label>
 			<input type="date" id = "Date of Birth" name="Date of Birth" required="required" />
 			<label for="p">Password:</label>
