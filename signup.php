@@ -9,6 +9,7 @@
 // Create new account and redirect to login
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 	// Check that passwords match
+	// TODO other checks (email formatting)
 	if($_POST['p'] == $_POST['pr']) {
 		// Construct INSERT
         $stmt = $conn->prepare("INSERT INTO Users (Email_Address, first_name, last_name, date_of_birth, type, password_hash) VALUES (:email, :first, :last, :dob, :type, :hash)");

@@ -14,17 +14,18 @@ if (!isset($_SESSION['user_ID']))
     // If the page is receiving the email and password from the login form then verify the login data
     if (isset($_POST['email']) && isset($_POST['password']))
     {
-        $stmt = $conn->prepare("SELECT ID, password FROM Users WHERE email=:email");
+        $stmt = $conn->prepare("SELECT type, password_hash FROM Users WHERE email=:email");
         $stmt->bindValue(':email', $_POST['email']);
         $stmt->execute();
         
         $queryResult = $stmt->fetch();
         
         // Verify password submitted by the user with the hash stored in the database
-        if(!empty($queryResult) && password_verify($_POST["password"], $queryResult['password']))
+        if(!empty($queryResult) && password_verify($_POST["password"], $queryResult['password_hash']))
         {
-            // Create session variable
-            $_SESSION['user_ID'] = $queryResult['ID'];
+            // Create session variables
+            $_SESSION['user_ID'] = $_POST['email'];
+            $_SESSION['user_type'] = $queryResult['type'];
             
             // Redirect to main page 
             header("Location: index.php");
