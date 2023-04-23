@@ -19,6 +19,7 @@ if (!isset($_SESSION['user_ID']))
         $stmt->execute();
         
         $queryResult = $stmt->fetch();
+        echo $queryResult;
         
         // Verify password submitted by the user with the hash stored in the database
         if(!empty($queryResult) && password_verify($_POST["password"], $queryResult['password_hash']))
@@ -26,6 +27,7 @@ if (!isset($_SESSION['user_ID']))
             // Create session variables
             $_SESSION['user_ID'] = $_POST['email'];
             $_SESSION['user_type'] = $queryResult['type'];
+            var_dump($_SESSION);
             
             // Redirect to main page 
             header("Location: index.php");
