@@ -2,9 +2,6 @@
 <head>
 <title> TCG Login </title>
 <?php
-		if (sset($_SESSION['user_ID'])) {
-			session_destroy();
-		}
 		require_once('login-locked.php');
 		require_once('header.php'); 
 ?>
