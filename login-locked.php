@@ -23,7 +23,6 @@ if (!isset($_SESSION['user_ID']))
         // Verify password submitted by the user with the hash stored in the database
         if(!empty($queryResult) && password_verify($_POST["password"], $queryResult['password_hash']))
         {
-            echo "test";
             // Create session variables
             $_SESSION['user_ID'] = $_POST['email'];
             $_SESSION['user_type'] = $queryResult['type'];
@@ -33,6 +32,7 @@ if (!isset($_SESSION['user_ID']))
         } else {
             // Password mismatch, show login page
             require('login.php');
+            echo "test";
             exit();
         }
     }
