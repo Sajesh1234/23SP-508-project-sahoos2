@@ -6,8 +6,8 @@
 
 <?php require_once('connection.php'); 
 
-if(!empty($_POST['action']) && $_POST['action'] == 'signup.php') {
-	echo $_POST['firstname'] + " " + $_POST['lastname'];
+if(!empty($_POST['firstname'])) {
+	echo "signup";
 }
 
 
@@ -104,7 +104,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 
 	<div class="Signup">
 	<h1>SIGN UP</h1>
-		<form action="signup.php" method="post">
+		<form method="post">
 			<label for="email">Email:</label>
 			<input type="text" name="email" placeholder="Email" required="required" />
 			<label for="firstname">First Name:</label>
