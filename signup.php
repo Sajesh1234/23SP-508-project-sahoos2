@@ -6,10 +6,6 @@
 
 <?php require_once('connection.php'); 
 
-if(!empty($_POST['action'])) {
-	echo $_POST['action'];
-}
-
 
 ?>
 <style>
