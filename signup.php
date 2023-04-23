@@ -6,14 +6,28 @@
 
 <?php require_once('connection.php'); 
 
+// Create new account and redirect to login
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-	echo $_POST['email'];
-	echo $_POST['firstname'];
-	echo $_POST['lastname'];
-	echo $_POST['dob'];
-	echo $_POST['p'];
-	echo $_POST['pr'];
-	echo $_POST['acc'];
+	// Check that passwords match
+	if($_POST['p'] == $_POST['pr']) {
+		// Construct INSERT
+        $stmt = $conn->prepare("INSERT INTO Users (Email_Address, first_name, last_name, date_of_birth, type, password_hash) VALUES (:email, :first, :last, :dob, :type, :hash)");
+        $stmt->bindValue(':email', $_POST['email']);
+        $stmt->bindValue(':first', $_POST['firstname']);
+        $stmt->bindValue(':last', $_POST['lastname']);
+        $stmt->bindValue(':dob', $_POST['dob']);
+        $stmt->bindValue(':type', $_POST['acc']);
+		// Hash pw
+        $stmt->bindValue(':hash', password_hash($_POST['lastname'], PASSWORD_DEFAULT));
+        $stmt->execute();
+
+        // Redirect to main page 
+        header("Location: index.php");
+	}
+	else {
+		// TODO prettify this lol
+		echo "Passwords do not match";
+	}
 }
 
 
