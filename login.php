@@ -1,6 +1,6 @@
 <html>
 <head>
-<title> TCG Loging </title>
+<title> TCG Login </title>
 <?php require_once('header.php'); ?>
 </head>
 <style>
