@@ -101,7 +101,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 			<label for="Email">Email:</label>
 			<input type="text" name="Email" placeholder="Email" required="required" />
 			<label for="First Name">First Name:</label>
-			<input type="text" name="First Name" placeholder="First Name" required="required" />
+			<input type="text" name="firstname" placeholder="First Name" required="required" />
 			<label for="Last Name">Last Name:</label>
 			<input type="text" name="Last Name" placeholder="Last Name" required="required" />
 			<label for="Date of Birth">Date of Birth:</label>
