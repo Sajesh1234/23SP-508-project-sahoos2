@@ -6,8 +6,14 @@
 
 <?php require_once('connection.php'); 
 
-if(!empty($_POST['firstname'])) {
-	echo "signup";
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+	echo $_POST['email'];
+	echo $_POST['firstname'];
+	echo $_POST['lastname'];
+	echo $_POST['dob'];
+	echo $_POST['p'];
+	echo $_POST['pr'];
+	echo $_POST['acc'];
 }
 
 
