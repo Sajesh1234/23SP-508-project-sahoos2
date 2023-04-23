@@ -27,7 +27,6 @@ if (!isset($_SESSION['user_ID']))
             // Create session variables
             $_SESSION['user_ID'] = $_POST['email'];
             $_SESSION['user_type'] = $queryResult['type'];
-            var_dump($_SESSION);
             
             // Redirect to main page 
             header("Location: index.php");

@@ -2,7 +2,13 @@
 <head>
 <title> TCG Login </title>
 <?php	require_once('login-locked.php');
-		require_once('header.php'); ?>
+		require_once('header.php'); 
+		
+		// If we're already signed in, redirect to the homepage
+		if(isset($_SESSION['user_ID'])) {
+			header("Location: index.php");
+		} 
+?>
 </head>
 <style>
 .btn { 
