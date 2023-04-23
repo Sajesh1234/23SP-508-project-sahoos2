@@ -106,11 +106,17 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 			<input type="text" name="Last Name" placeholder="Last Name" required="required" />
 			<label for="Date of Birth">Date of Birth:</label>
 			<input type="date" id = "Date of Birth" name="Date of Birth" required="required" />
-			<label for="p">password:</label>
+			<label for="p">Password:</label>
 			<input type="password" name="p" placeholder="Password" required="required" />
 			<label for="pr">Re-enter Password:</label>
 			<input type="password" name="pr" placeholder ="Re-enter Password" required = "required" />
-			<button type="submit" class="btn btn-primary btn-block btn-large">Sign In</button>
+			<label for="acc">Account Type:</label>
+			<select id="acc" name = "acc">
+				<option value = "">N/A</option>
+				<option value = "Player">Player</option>
+				<option value = "Referee">Referee</option>
+			</select>
+			<button type="submit" class="btn btn-primary btn-block btn-large">Create Account</button>
 		</form>
 	</div>
 
