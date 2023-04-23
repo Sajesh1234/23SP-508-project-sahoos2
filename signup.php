@@ -4,7 +4,15 @@
 <?php require_once('header.php'); ?>
 </head>
 
-<?php require_once('connection.php'); ?>
+<?php require_once('connection.php'); 
+
+if(!isset($_POST['action']))
+{
+	echo $_POST['firstname'];
+}
+
+
+?>
 <style>
 
 .btn { 
@@ -97,15 +105,15 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 
 	<div class="Signup">
 	<h1>SIGN UP</h1>
-		<form action="login-landing.php" method="post">
-			<label for="Email">Email:</label>
-			<input type="text" name="Email" placeholder="Email" required="required" />
+		<form action="signup.php" method="post">
+			<label for="email">Email:</label>
+			<input type="text" name="email" placeholder="Email" required="required" />
 			<label for="firstname">First Name:</label>
 			<input type="text" name="firstname" placeholder="First Name" required="required" />
 			<label for="lastname">Last Name:</label>
 			<input type="text" name="lastname" placeholder="Last Name" required="required" />
 			<label for="Date of Birth">Date of Birth:</label>
-			<input type="date" id = "Date of Birth" name="Date of Birth" required="required" />
+			<input type="date" id = "Date of Birth" name="dob" required="required" />
 			<label for="p">Password:</label>
 			<input type="password" name="p" placeholder="Password" required="required" />
 			<label for="pr">Re-enter Password:</label>
