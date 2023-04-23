@@ -19,7 +19,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindValue(':dob', $_POST['dob']);
         $stmt->bindValue(':type', $_POST['acc']);
 		// Hash pw
-        $stmt->bindValue(':hash', password_hash($_POST['lastname'], PASSWORD_DEFAULT));
+		$hash = password_hash($_POST['lastname'], PASSWORD_DEFAULT);
+        $stmt->bindValue(':hash', $hash);
         $stmt->execute();
 
         // Redirect to main page 
