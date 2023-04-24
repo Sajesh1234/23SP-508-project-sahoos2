@@ -36,6 +36,7 @@
 <body>
   
   <a href = "login" class="login-button"><button>Login/ Sign Up</button></a>
+  <a href = "logout" class="login-button"><button>Logout</button></a>   
   <ul>
   <li><a href="teams">Teams</a></li>
   
