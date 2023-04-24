@@ -143,7 +143,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 			<select id="acc" name = "acc">
 				<option value = "">N/A</option>
 				<option value = "player">Player</option>
-				<option value = "referee">Referee</option>
+				<option value = "ref">Referee</option>
 			</select>
 			<button type="submit" class="btn btn-primary btn-block btn-large">Create Account</button>
 		</form>
