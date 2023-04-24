@@ -21,6 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 		// Hash pw
 		$hash = password_hash($_POST['lastname'], PASSWORD_DEFAULT);
         $stmt->bindValue(':hash', $hash);
+		print($stmt);
         $stmt->execute();
 
         // Redirect to main page 
