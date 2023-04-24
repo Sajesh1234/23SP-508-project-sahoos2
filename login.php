@@ -2,6 +2,12 @@
 <head>
 <title> TCG Login </title>
 <?php
+		// If the user is logged in already, don't let them log in again
+		if (isset($_SESSION['user_ID'])) {
+            // Redirect to main page 
+            header("Location: index.php");
+		}
+
 		require_once('login-locked.php');
 		require_once('header.php'); 
 ?>
