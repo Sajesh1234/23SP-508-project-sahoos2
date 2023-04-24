@@ -9,7 +9,7 @@ require_once('login-locked.php');
 // Start or resume session variables
 session_start();
 
-if (!isEmpty($_SESSION['user_type']))
+if (!empty($_SESSION['user_type']))
 {
 	echo $_SESSION['user_type'];
 	// If the user_type session is not "Player", then the user can't see this page
