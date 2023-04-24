@@ -100,7 +100,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 		// If the user is logged in already, don't let them log in again
 		if (isset($_SESSION['user_ID'])) {
             // Redirect to main page 
-			echo $_SESSION['user_id'];
+			echo $_SESSION['user_ID'];
             header("Location: index.php");
 		}?>
 <body>
