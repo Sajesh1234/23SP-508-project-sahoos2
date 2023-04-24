@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindValue(':dob', $_POST['dob']);
         $stmt->bindValue(':type', $_POST['acc']);
 		// Hash pw
-		$hash = password_hash($_POST['lastname'], PASSWORD_DEFAULT);
+		$hash = password_hash($_POST['p'], PASSWORD_DEFAULT);
         $stmt->bindValue(':hash', $hash);
 		print($stmt->debugDumpParams());
         $stmt->execute();
