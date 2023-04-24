@@ -32,7 +32,7 @@ if (!isset($_SESSION['user_ID']))
         } else {
             // Password mismatch, show login page
             require('login.php');
-		    // TODO make look nicer
+		    // TODO make this look nicer
             echo "Incorrect Username or Password";
             exit();
         }
