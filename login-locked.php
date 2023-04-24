@@ -21,9 +21,6 @@ if (!isset($_SESSION['user_ID']))
         $queryResult = $stmt->fetch();
         
         // Verify password submitted by the user with the hash stored in the database
-        print(!empty($queryResult));
-        print(+password_verify($_POST["password"], $queryResult['password_hash']));
-        print $_POST["password"];
         if(!empty($queryResult) && password_verify($_POST["password"], $queryResult['password_hash']))
         {
             // Create session variables
@@ -35,6 +32,7 @@ if (!isset($_SESSION['user_ID']))
         } else {
             // Password mismatch, show login page
             require('login.php');
+		    // TODO make look nicer
             echo "Incorrect Username or Password";
             exit();
         }

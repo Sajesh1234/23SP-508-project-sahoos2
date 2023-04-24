@@ -7,7 +7,6 @@
 		// If the user is logged in already, don't let them log in again
 		if (isset($_SESSION['user_ID'])) {
             // Redirect to main page 
-			echo $_SESSION['user_ID'];
             header("Location: index.php");
 		}
 
