@@ -45,8 +45,8 @@
      	  border-width: auto;
      	}
      	.imagesfit{
-     	height:975px;
-     	width: 1920px;
+     	height:100%;
+     	width:100%; 
      	object-fit: fill;
      	filter:brightness(80%);
      	}

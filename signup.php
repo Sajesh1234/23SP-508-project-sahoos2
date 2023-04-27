@@ -90,12 +90,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
 }
 .Signup { 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -150px 0 0 -150px;
+  position: center;
+  margin: auto;
   width:300px;
   height:300px;
+  color: white;
 }
 .Signup h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
 
@@ -118,6 +117,7 @@ input {
   -ms-transition: box-shadow .5s ease;
   transition: box-shadow .5s ease;
 }
+
 input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
  
 </style>
@@ -128,13 +128,13 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 	<h1>SIGN UP</h1>
 		<form method="post">
 			<label for="email">Email:</label>
-			<input type="text" name="email" placeholder="Email" required="required" />
+			<input type="text" name="email" placeholder="Email Address" required="required" />
 			<label for="firstname">First Name:</label>
 			<input type="text" name="firstname" placeholder="First Name" required="required" />
 			<label for="lastname">Last Name:</label>
 			<input type="text" name="lastname" placeholder="Last Name" required="required" />
-			<label for="Date of Birth">Date of Birth:</label>
-			<input type="date" id = "Date of Birth" name="dob" required="required" />
+			<label for="DateofBirth">Date of Birth:</label>
+			<input type="date" id = "DateofBirth" name="dob" required="required" />
 			<label for="p">Password:</label>
 			<input type="password" name="p" placeholder="Password" required="required" />
 			<label for="pr">Re-enter Password:</label>
