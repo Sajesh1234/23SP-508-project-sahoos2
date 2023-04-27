@@ -18,7 +18,7 @@
 	   .logo{
      	  font-family: 'Castoro Titling';
      	  font-size: 25px;
-     	  padding: 50px;
+     	  padding: 35px;
      	  margin-left:50px;
      	}
      	.logo a{
@@ -94,7 +94,7 @@
       <img class = "imagesfit" src="images/dragon.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
       <div class ="box">
-        <h1>Blue Eyes White Dragon</h5>
+        <h1>Blue Eyes White Dragon</h1>
         <p>Some representative placeholder content for the first slide.</p>
         </div>
       </div>
