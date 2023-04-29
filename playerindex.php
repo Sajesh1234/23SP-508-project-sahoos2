@@ -158,14 +158,14 @@
 	<div class ="box2">
 		<div class="view">
 			<h1>VIEW INFO</h1>
-				<table>
-					<tr><th></th></tr>
-      				<tr><th>Team:</th></tr>
-       				<tr><th>Wins:</th></tr>
-       				<tr><th>Losses:</th></tr>
-        			<tr><th>Draws:</th></tr>
-        			<tr><th>Win/Loss Ratio:</th></tr>    
-    			</table>
+			<table>
+				<tr><th></th></tr>
+      			<tr><th>Team:</th></tr>
+       			<tr><th>Wins:</th></tr>
+       			<tr><th>Losses:</th></tr>
+        		<tr><th>Draws:</th></tr>
+        		<tr><th>Win/Loss Ratio:</th></tr>    
+    		</table>
 		</div>
 	</div>
 </div>
