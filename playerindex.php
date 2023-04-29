@@ -63,20 +63,26 @@
 
 .box{
      	background:rgba(0, 0, 0, 0.5);
-     	width:100%;
+     	width:50%;
      	height: 450px;
      	padding: 100px;
      	color:white;
+     	position: fixed;
      	
      	}
-     	.login { 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -150px 0 0 -150px;
-  width:300px;
-  height:300px;
-}
+     	.box2 {
+     	background:rgba(0, 0, 0, 0.5);
+     	width:50%;
+     	height: 450px;
+     	padding: 100px;
+     	color:white;
+     	position: absolute;
+     	top: 0px;
+     	right: 0px;
+     	
+     	
+     	}
+     	
 
 input { 
   width: 100%; 
@@ -98,6 +104,22 @@ input {
   transition: box-shadow .5s ease;
 }
 input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+
+table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      padding: 8px;
+      text-align: left;
+      color:white;
+      font-weight:normal;
+    }
+    
+    th {
+      
+    }
 
 </style>
 
@@ -121,7 +143,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 </header>
 
 <div class = "editinfo">
-	<div class ="box ">
+	<div class ="box">
 		<div class="edit">
 			<h1>EDIT INFO</h1>
 				<form method="post">
@@ -138,6 +160,22 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
         
 	</div>
 
+</div>
+
+<div class = "ViewStats">
+	<div class ="box2">
+		<div class="view">
+			<h1>VIEW INFO</h1>
+				<table>
+					<tr><th></th></tr>
+      				<tr><th>Team:</th></tr>
+       				<tr><th>Wins:</th></tr>
+       				<tr><th>Losses:</th></tr>
+        			<tr><th>Draws:</th></tr>
+        			<tr><th>Win/Loss Ratio:</th></tr>    
+    			</table>
+		</div>
+	</div>
 </div>
 
 
