@@ -6,8 +6,21 @@
 		
 		// If the user is logged in already, don't let them log in again
 		if (isset($_SESSION['user_ID'])) {
-            // Redirect to main page 
-            header("Location: playerindex");
+            // Redirect to appropriate main page 
+			if(isset($_SESSION['user_type'])) {
+				if($_SESSION['user_type'] == "Admin") {
+					header("Location: adminindex");
+				}
+				if($_SESSION['user_type'] == "Ref") {
+					header("Location: refindex");
+				}
+				if($_SESSION['user_type'] == "Player") {
+					header("Location: playerindex");
+				}
+				else {
+					header("Location: index");
+				}
+			}
 		}
 
 		require_once('header.php'); 
