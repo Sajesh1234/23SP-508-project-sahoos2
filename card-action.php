@@ -22,7 +22,7 @@ function listCards()
         $dataRow = array();
         
        
-        $dataRow[] = $sqlRow[];
+        $dataRow[] = $sqlRow;
         
         $dataTable[] = $dataRow;
     }
