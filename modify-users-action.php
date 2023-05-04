@@ -128,36 +128,36 @@ function deleteUser()
 {
     global $conn;
     
-    if ($_POST["Email_Address"]) {
+    if ($_POST["email"]) {
         
         $sqlQuery = "DELETE FROM Person_Phone_Numbers WHERE Person = :Email_Address";
         
         $stmt = $conn->prepare($sqlQuery);
-        $stmt->bindValue(':Email_Address', $_POST["Email_Address"]);
+        $stmt->bindValue(':Email_Address', $_POST["email"]);
         $stmt->execute();
         
         $sqlQuery = "DELETE FROM Players WHERE Person_ID = :Email_Address";
         
         $stmt = $conn->prepare($sqlQuery);
-        $stmt->bindValue(':Email_Address', $_POST["Email_Address"]);
+        $stmt->bindValue(':Email_Address', $_POST["email"]);
         $stmt->execute();
         
         $sqlQuery = "DELETE FROM Refs WHERE Person_ID = :Email_Address";
         
         $stmt = $conn->prepare($sqlQuery);
-        $stmt->bindValue(':Email_Address', $_POST["Email_Address"]);
+        $stmt->bindValue(':Email_Address', $_POST["email"]);
         $stmt->execute();
         
         $sqlQuery = "DELETE FROM Deck WHERE Player = :Email_Address";
         
         $stmt = $conn->prepare($sqlQuery);
-        $stmt->bindValue(':Email_Address', $_POST["Email_Address"]);
+        $stmt->bindValue(':Email_Address', $_POST["email"]);
         $stmt->execute();
         
         $sqlQuery = "DELETE FROM Users WHERE Email_Address = :Email_Address";
         
         $stmt = $conn->prepare($sqlQuery);
-        $stmt->bindValue(':Email_Address', $_POST["Email_Address"]);
+        $stmt->bindValue(':Email_Address', $_POST["email"]);
         $stmt->execute();
     }
 }
