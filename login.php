@@ -21,6 +21,7 @@
 					header("Location: index");
 				}
 			}
+			echo $_SESSION['user_type'];
 		}
 
 		require_once('header.php'); 
