@@ -9,7 +9,7 @@ function listCards()
     
     $sqlQuery = "SELECT *
                  FROM
-                 Team_View";
+                 Card_View";
     
     $stmt = $conn->prepare($sqlQuery);
     $stmt->execute();
@@ -23,6 +23,9 @@ function listCards()
         
        
         $dataRow[] = $sqlRow['Name'];
+        $dataRow[] = $sqlRow['Rarity'];
+        $dataRow[] = $sqlRow['Card_Text'];
+        $dataRow[] = $sqlRow['Expansion'];
         
         $dataTable[] = $dataRow;
     }

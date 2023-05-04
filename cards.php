@@ -17,6 +17,9 @@
 			<thead>
 				<tr>
 					<th>Name</th>
+					<th>Rarity</th>
+					<th>Text</th>
+					<th>Expansion</th>
 				</tr>
 			</thead>
 		</table>
