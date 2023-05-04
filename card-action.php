@@ -16,19 +16,11 @@ function listCards()
     
     $numberRows = $stmt->rowCount();
     
-    $dataTable = array();
-    
-    while ($sqlRow = $stmt->fetch()) {        
-        $dataTable[] = $sqlRow;
+    $data = array();
+    while ($row = mysql_fetch_assoc($results)) {
+       $data[] = $row;
     }
-    
-    $output = array(
-        "recordsTotal" => $numberRows,
-        "recordsFiltered" => $numberRows,
-        "data" => $dataTable
-    );
-    
-    echo json_encode($output);
+    echo json_encode($data);
 }
 
 
