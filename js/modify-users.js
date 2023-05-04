@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	
-	var tableEmployee = $('#table-user').DataTable({
+	var userTable = $('#table-user').DataTable({
 		"dom": 'Blfrtip',
 		"autoWidth": false,
 		"processing":true,
@@ -11,25 +11,24 @@ $(document).ready(function(){
 		"language": {processing: '<i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>'}, // Loading icon while data is read from the database
 		"order":[],
 		"ajax":{
-			url:"advanced-employee-action.php",
+			url:"modify-users-action.php",
 			type:"POST",
 			data:{
-					action:'listEmployees'
+					action:'listUsers'
 				},
 			dataType:"json"
 		},
-		"columnDefs":[ {"targets":[0], "visible":false} ], // Hide first column of the table containing the employee ID
 		"buttons": [
 				{
 					extend: 'excelHtml5',
-					title: 'Employees',
-					filename: 'Employees',
+					title: 'TCG Users',
+					filename: 'TCG Users',
 					exportOptions: {columns: [1,2,3,4,5,6]}
 				},
 				{
 					extend: 'pdfHtml5',
-					title: 'Employees',
-					filename: 'Employees',
+					title: 'TCG Users',
+					filename: 'TCG Users',
 					exportOptions: {columns: [1,2,3,4,5,6]}
 				},
 				{
@@ -40,77 +39,71 @@ $(document).ready(function(){
 				}]
 	});	
 	
-	$("#addEmployee").click(function(){
-		$('#employee-form')[0].reset();
-		$('#employee-modal').modal('show'); // Open model (popup) on the browser
-		$('.modal-title').html("Add Employee");
-		$('#action').val('addEmployee');
+	$("#addUser").click(function(){
+		$('#user-form')[0].reset();
+		$('#user-modal').modal('show'); // Open model (popup) on the browser
+		$('.modal-title').html("Add User");
+		$('#action').val('addUser');
 		$('#save').val('Add');
 	});
 	
-	$("#employee-modal").on('submit','#employee-form', function(event){
+	$("#user-modal").on('submit','#user-form', function(event){
 		event.preventDefault();
 		$('#save').attr('disabled','disabled');
 		$.ajax({
-			url:"advanced-employee-action.php",
+			url:"modify-users-action.php",
 			method:"POST",
 			data:{
 				// Copy variables from the modal (popup) to send it to the POST
-				ID: $('#ID').val(),
+				Email_Address: $('#Email_Address').val(),
 				firstname: $('#firstname').val(),
 				lastname: $('#lastname').val(),
-				email: $('#email').val(),
-				salary: $('#salary').val(),
-				department: $('#department').val(),
-				manager: $('#manager').val(),
-				job: $('#job').val(),
+				date_of_birth: $('#dob').val(),
+				type: $('#acc').val(),
 				action: $('#action').val(),
 			},
 			success:function(){
-				$('#employee-modal').modal('hide');
-				$('#employee-form')[0].reset();
+				$('#user-modal').modal('hide');
+				$('#user-form')[0].reset();
 				$('#save').attr('disabled', false);
-				tableEmployee.ajax.reload();
+				userTable.ajax.reload();
 			}
 		})
 	});		
 	
-	$("#table-employee").on('click', '.update', function(){
-		var ID = $(this).attr("emp_id");
-		var action = 'getEmployee';
+	$("#table-user").on('click', '.update', function(){
+		var ID = $(this).attr("Email_Address");
+		var action = 'getUser';
 		$.ajax({
-			url:'advanced-employee-action.php',
+			url:'modify-users-action.php',
 			method:"POST",
 			data:{ID:ID, action:action},
 			dataType:"json",
 			success:function(data){
-				// Copy variables from the returned JSON from the SQL query in getEmployee into the modal (popup)
-				$('#employee-modal').modal('show');
-				$('#ID').val(ID);
+				// Copy variables from the returned JSON from the SQL query in getUser into the modal (popup)
+				$('#user-modal').modal('show');
+				$('#Email_Address').val(Email_Address);
 				$('#firstname').val(data.first_name);
 				$('#lastname').val(data.last_name);
-				$('#email').val(data.email);
-				$('#salary').val(data.salary);
-				$('#department').val(data.department_ID);
-				$('#manager').val(data.manager_ID);
-				$('#job').val(data.job_ID);
-				$('.modal-title').html("Edit Employee");
-				$('#action').val('updateEmployee');
+				$('#dob').val(data.dob);
+				$('#type').val(data.acc);
+				$('.modal-title').html("Edit User");
+				$('#action').val('updateUser');
 				$('#save').val('Save');
 			}
 		})
 	});
 	
-	$("#table-employee").on('click', '.delete', function(){
-		var ID = $(this).attr("emp_id");		
-		var action = "deleteEmployee";
-		if(confirm("Are you sure you want to delete this employee?")) {
+	$("#table-user").on('click', '.delete', function(){
+		var ID = $(this).attr("Email_Address");
+		var action = "deleteUser";
+		if(confirm("Are you sure you want to delete this user?")) {
 			$.ajax({
-				url:'advanced-employee-action.php',
+				url:'modify-user-action.php',
 				method:"POST",
 				data:{ID:ID, action:action},
 				success:function() {					
-					tableEmployee.ajax.reload();
+					userTable.ajax.reload();
 				}
 			})
 		} else {

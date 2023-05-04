@@ -64,47 +64,11 @@
 						<label>Date of Birth</label> <input type="date" class="form-control" id="dob" required>
 
 						<label for="acc">Account Type:</label>
-						<select id="acc" name = "acc" required>
+						<select class="form-control" id="acc" required>
 							<option value = "Admin">Admin</option>
 							<option value = "Player">Player</option>
 							<option value = "Ref">Referee</option>
 						</select>
-						
-						<label>Department</label>
-						<select class="form-control" id="department">
-            			    <?php
-            			        $sqlQuery = "SELECT department_ID, department_name FROM departments ORDER BY department_name ASC";
-            			        $stmt = $conn->prepare($sqlQuery);
-            			        $stmt->execute();
-            			        while ($row = $stmt->fetch()) {
-            			            echo "<option value=\"" . $row["department_ID"] . "\">" . $row["department_name"] . "</option>";
-            			        }
-                            ?>
-            			</select>
-            			
-            			<label>Manager</label>
-						<select class="form-control" id="manager">
-            			    <?php
-            			        $sqlQuery = "SELECT employee_ID, concat(first_name, \" \", last_name) as `name` FROM employees ORDER BY `name` ASC";
-            			        $stmt = $conn->prepare($sqlQuery);
-            			        $stmt->execute();
-            			        while ($row = $stmt->fetch()) {
-            			            echo "<option value=\"" . $row["employee_ID"] . "\">" . $row["name"] . "</option>";
-            			        }
-                            ?>
-            			</select>
-            			
-            			<label>Job</label>
-						<select class="form-control" id="job">
-            			    <?php
-            			        $sqlQuery = "SELECT job_ID, job_title FROM jobs ORDER BY `job_title` ASC";
-            			        $stmt = $conn->prepare($sqlQuery);
-            			        $stmt->execute();
-            			        while ($row = $stmt->fetch()) {
-            			            echo "<option value=\"" . $row["job_ID"] . "\">" . $row["job_title"] . "</option>";
-            			        }
-                            ?>
-            			</select>
 
 					</div>
 				</div>
