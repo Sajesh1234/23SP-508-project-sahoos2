@@ -38,8 +38,8 @@ function listCards()
 }
 
 
-if(!empty($_POST['action']) && $_POST['action'] == 'listTeams') {
-    listTeams();
+if(!empty($_POST['action']) && $_POST['action'] == 'listCards') {
+    listCards();
 }
 
 ?>
