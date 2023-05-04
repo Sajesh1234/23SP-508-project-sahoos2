@@ -21,7 +21,7 @@
 					header("Location: index");
 				}
 			}
-			echo $_SESSION['user_type'];
+			echo '<script>console.log("'$_SESSION['user_type']'"); </script>'
 		}
 
 		require_once('header.php'); 
