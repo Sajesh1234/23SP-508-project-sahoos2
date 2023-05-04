@@ -9,7 +9,7 @@
             // Redirect to appropriate main page 
 			if(isset($_SESSION['user_type'])) {
 				if($_SESSION['user_type'] == "Admin") {
-					header("Location: cards");
+					header("Location: adminindex");
 				}
 				elseif($_SESSION['user_type'] == "Ref") {
 					header("Location: refindex");
