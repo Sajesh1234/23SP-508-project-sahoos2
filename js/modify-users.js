@@ -99,7 +99,7 @@ $(document).ready(function(){
 		var action = "deleteUser";
 		if(confirm("Are you sure you want to delete this user?")) {
 			$.ajax({
-				url:'modify-user-action.php',
+				url:'modify-users-action.php',
 				method:"POST",
 				data:{ID:ID, action:action},
 				success:function() {					
