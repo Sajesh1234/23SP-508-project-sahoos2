@@ -95,13 +95,13 @@ $(document).ready(function(){
 	});
 	
 	$("#table-user").on('click', '.delete', function(){
-		var ID = $(this).attr("Email_Address");
+		var email = $(this).attr("Email_Address");
 		var action = "deleteUser";
 		if(confirm("Are you sure you want to delete this user?")) {
 			$.ajax({
 				url:'modify-users-action.php',
 				method:"POST",
-				data:{ID:ID, action:action},
+				data:{email:email, action:action},
 				success:function() {					
 					userTable.ajax.reload();
 				}
