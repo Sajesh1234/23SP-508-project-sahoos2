@@ -23,7 +23,7 @@ function listTournaments()
         $dataRow[] = $sqlRow['Name'];
         $dataRow[] = $sqlRow['Year_of_Tournament'];
         $dataRow[] = $sqlRow['Prize'];
-        $dataRow[] = $sqlRow['Location'];
+        $dataRow[] = $sqlRow['Location'] + "eee";
         
         $dataTable[] = $dataRow;
     }
