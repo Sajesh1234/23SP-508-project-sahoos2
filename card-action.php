@@ -18,13 +18,8 @@ function listCards()
     
     $dataTable = array();
     
-    while ($sqlRow = $stmt->fetch()) {
-        $dataRow = array();
-        
-       
-        $dataRow[] = $sqlRow;
-        
-        $dataTable[] = $dataRow;
+    while ($sqlRow = $stmt->fetch()) {        
+        $dataTable[] = $sqlRow;
     }
     
     $output = array(
