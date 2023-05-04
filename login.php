@@ -18,10 +18,9 @@
 					header("Location: playerindex");
 				}
 				else {
-					header("Location: index");
+					header("Location: cards");
 				}
 			}
-			echo '<script>console.log("'$_SESSION['user_type']'"); </script>'
 		}
 
 		require_once('header.php'); 
