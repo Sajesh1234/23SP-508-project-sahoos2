@@ -72,12 +72,12 @@ $(document).ready(function(){
 	});		
 	
 	$("#table-user").on('click', '.update', function(){
-		var ID = $(this).attr("Email_Address");
+		var email = $(this).attr("Email_Address");
 		var action = 'getUser';
 		$.ajax({
 			url:'modify-users-action.php',
 			method:"POST",
-			data:{ID:ID, action:action},
+			data:{email:email, action:action},
 			dataType:"json",
 			success:function(data){
 				// Copy variables from the returned JSON from the SQL query in getUser into the modal (popup)

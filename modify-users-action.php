@@ -64,7 +64,7 @@ function getUser()
 {
     global $conn;
     
-    if ($_POST["Email_Address"]) {
+    if ($_POST["email"]) {
         
         $sqlQuery = "SELECT Email_Address as `Email Address`,
                         first_name,
@@ -75,7 +75,7 @@ function getUser()
                      WHERE Email_Address = :Email_Address";
         
         $stmt = $conn->prepare($sqlQuery);
-        $stmt->bindValue(':Email_Address', $_POST["Email_Address"]);
+        $stmt->bindValue(':Email_Address', $_POST["email"]);
         $stmt->execute();
         
         echo json_encode($stmt->fetch());
@@ -86,7 +86,7 @@ function updateUser()
 {
     global $conn;
     
-    if ($_POST['Email_Address']) {
+    if ($_POST['email']) {
         
         $sqlQuery = "UPDATE Users
                         SET
@@ -101,7 +101,7 @@ function updateUser()
         $stmt->bindValue(':last_name', $_POST["lastname"]);
         $stmt->bindValue(':date_of_birth', $_POST["date_of_birth"]);
         $stmt->bindValue(':type', $_POST["type"]);
-        $stmt->bindValue(':Email_Address', $_POST["Email_Address"]);
+        $stmt->bindValue(':Email_Address', $_POST["email"]);
         $stmt->execute();
     }
 }
