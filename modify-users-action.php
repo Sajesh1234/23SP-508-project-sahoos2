@@ -136,13 +136,13 @@ function deleteUser()
         $stmt->bindValue(':Email_Address', $_POST["email"]);
         $stmt->execute();
         
-        $sqlQuery = "DELETE FROM Players WHERE Person_ID = :Email_Address";
+        $sqlQuery = "DELETE FROM Player WHERE Person_ID = :Email_Address";
         
         $stmt = $conn->prepare($sqlQuery);
         $stmt->bindValue(':Email_Address', $_POST["email"]);
         $stmt->execute();
         
-        $sqlQuery = "DELETE FROM Refs WHERE Person_ID = :Email_Address";
+        $sqlQuery = "DELETE FROM Ref WHERE Person_ID = :Email_Address";
         
         $stmt = $conn->prepare($sqlQuery);
         $stmt->bindValue(':Email_Address', $_POST["email"]);
