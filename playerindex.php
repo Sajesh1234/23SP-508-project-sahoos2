@@ -6,7 +6,7 @@
 
 <?php require_once ('player-only.php');?>
 </head>
-
+ 
 <style>
         *{
 	      margin: 0;
