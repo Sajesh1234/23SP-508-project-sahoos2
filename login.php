@@ -18,7 +18,7 @@
 					header("Location: playerindex");
 				}
 				else {
-					header("Location: cards");
+					header("Location: index");
 				}
 			}
 		}
