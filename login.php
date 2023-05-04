@@ -11,10 +11,10 @@
 				if($_SESSION['user_type'] == "Admin") {
 					header("Location: cards");
 				}
-				if($_SESSION['user_type'] == "Ref") {
+				elseif($_SESSION['user_type'] == "Ref") {
 					header("Location: refindex");
 				}
-				if($_SESSION['user_type'] == "Player") {
+				elseif($_SESSION['user_type'] == "Player") {
 					header("Location: playerindex");
 				}
 				else {
