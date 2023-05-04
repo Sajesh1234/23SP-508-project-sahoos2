@@ -141,7 +141,7 @@
 	</div>
 </header>
 
-<div class = "links">
+<div class = "body">
     <ul>
     	<li><a href="advanced-employee.php">Users (add, edit, delete, search, sort, export)</a></li>
     	<li><a href="advanced-employee.php">Players (add, edit, delete, search, sort, export)</a></li>
