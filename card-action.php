@@ -34,7 +34,7 @@ function listCards()
         "data" => $dataTable
     );
     
-    echo json_encode($dataTable);
+    echo json_encode($output);
 }
 
 

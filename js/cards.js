@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	
+
 	$('#table-Card').DataTable({
 		"dom": 'Blfrtip',
 		"ordering": false,
