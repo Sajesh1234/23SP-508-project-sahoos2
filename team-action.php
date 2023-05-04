@@ -9,7 +9,7 @@ function listTeams()
     
     $sqlQuery = "SELECT *
                  FROM
-                 Team";
+                 Team_View";
     
     $stmt = $conn->prepare($sqlQuery);
     $stmt->execute();
