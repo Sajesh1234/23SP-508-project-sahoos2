@@ -150,8 +150,9 @@
 <br>
 <br>
 <div class = "body">
+    <h2>Admin Tools</h2>
     <ul>
-    	<li><a href="advanced-employee.php">Users (add, edit, delete, search, sort, export)</a></li>
+    	<li><a href="modify-users.php">Users (add, edit, delete, search, sort, export)</a></li>
     	<li><a href="advanced-employee.php">Players (add, edit, delete, search, sort, export)</a></li>
     	<li><a href="advanced-employee.php">Cards (add, edit, delete, search, sort, export)</a></li>
     	<li><a href="advanced-employee.php">Tournaments (add, edit, delete, search, sort, export)</a></li>
