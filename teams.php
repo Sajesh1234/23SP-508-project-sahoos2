@@ -11,7 +11,7 @@
 <body>
 
 <div class="container-fluid mt-3 mb-3">
-	<h4>Team</h4>
+	<h4>Teams</h4>
 	<div>
 		<table id="table-Team" class="table table-bordered table-striped">
 			<thead>
