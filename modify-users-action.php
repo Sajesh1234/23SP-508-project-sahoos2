@@ -11,7 +11,7 @@ function listUsers()
                         concat(u.first_name, ' ', u.last_name) as `Name`,
                         u.date_of_birth as `Date of Birth`,
                         u.type as `Type`
-                 FROM Users u";
+                 FROM Users u ";
     
     if (! empty($_POST["search"]["value"])) {
        $sqlQuery .= 'WHERE (u.Email_Address LIKE "%' . $_POST["search"]["value"] . '%" OR u.first_name LIKE "%' . $_POST["search"]["value"] . '%" OR u.last_name LIKE "%' . $_POST["search"]["value"] . '%" or u.type LIKE "%' . $_POST["search"]["value"] . '%") ';
