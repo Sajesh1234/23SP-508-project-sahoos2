@@ -64,7 +64,7 @@
         .box{
      	  background:rgba(0, 0, 0, 0.5);
           width:50%;
-     	  height: 450px;
+     	  height: 46%;
      	  padding: 100px;
      	  color:white;
      	  position: fixed;
@@ -73,13 +73,31 @@
      	.box2 {
      	  background:rgba(0, 0, 0, 0.5);
      	  width:50%;
-     	  height: 450px;
+     	  height: 46%;
      	  padding: 100px;
      	  color:white;
-     	  position: absolute;
+     	  position: fixed;
      	  top: 0px;
      	  right: 0px;  	
      	} 
+     	.box3 {
+     	  background:rgba(0, 0, 0, 0.5);
+     	  width:50%;
+     	  height: 54%;
+     	  color:white;
+     	  position: fixed;
+     	  bottom: 0px;
+     	  left: 0px;  	
+     	} 
+     	.box4 {
+     	  background:rgba(0, 0, 0, 0.5);
+     	  width:50%;
+     	  height: 54%;
+     	  color:white;
+     	  position: fixed;
+     	  bottom: 0px;
+     	  right: 0px;  	
+     	}  
      	  
             
         input { 
@@ -113,6 +131,48 @@
           color:white;
           font-weight:normal;
           }
+          .decks{
+          padding-left: 100px;
+          }
+          .tourna-ment{
+          padding-left: 100px;
+          }
+          .imagesfit{
+     	height:100%;
+     	width:100%; 
+     	margin-left: auto;
+        margin-right: auto;
+     	filter:brightness(80%);
+     	}
+     	.imagesfit2{
+     	height:100%;
+     	width:100%; 
+     	margin-left: auto;
+        margin-right: auto;
+     	filter:brightness(80%);
+     	}
+     	.btn { 
+ display: inline-block;
+ *display: inline; *zoom: 1;
+ padding: 4px 10px 4px; 
+ margin-bottom: 10; 
+ font-size: 13px; 
+ line-height: 18px; 
+ cursor: pointer; 
+ *margin-left: .3em; 
+ }
+ 
+.btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] { background-color: #2644c9; }
+.btn-primary, .btn-primary:hover { text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; }
+.btn-primary.active { color: rgba(255, 255, 255, 0.75); }
+.btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] { filter: none; background-color: #4a77d4; }
+.move {
+    top: 10px;
+    right:10px;
+    position: absolute;
+
+}
+
 </style>
 
 
@@ -123,6 +183,9 @@
 	<div class ="logo">
 	<a href ="" >TCG DataBase</a>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
 		<div class ="nav_bar">
 			<ul>
 				<li><a href = "teams">Teams</a></li>
@@ -169,7 +232,76 @@
 		</div>
 	</div>
 </div>
+<div class = "Cards">
+	<div class ="box3">
+		<div class="edit-cards">
+			<h1 class ='decks'>EDIT DECKS</h1>
+			<div class = 'move'>
+			<a href= 'cards' class = "btn btn-primary btn-block btn-large" > CLICK HERE TO EDIT</a>
+			</div>
+	<div id="carouselExampleDark" class="carousel carousel-dark slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="6" aria-label="Slide 7"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img class = "imagesfit" src="images/dragon.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img class = "imagesfit" src="images/armor.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img class = "imagesfit" src="images/ghast.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img class = "imagesfit" src="images/blademaster.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img class = "imagesfit" src="images/giant.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img class = "imagesfit" src="images/witchC.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img class = "imagesfit" src="images/Wyrmling2.png" class="d-block w-100" alt="...">
+    </div>
+    
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+		</div>
+	</div>
+</div>
 
+<div class = "ViewTournament">
+	<div class ="box4">
+		<div class="Tourna">
+			<h1 class = "tourna-ment">VIEW ON GOING MATCHES</h1>
+			<div id="carouselExampleDark" class="carousel carousel-dark slide">
+  <div class="carousel-indicators">
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img class = "imagesfit2" src="images/tournament.png" class="d-block w-100" alt="...">
+    </div>
+    </div>
+		</div>
+	</div>
+</div>
+</div>
 
 
 </body>
