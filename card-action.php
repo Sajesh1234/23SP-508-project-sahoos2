@@ -7,9 +7,7 @@ function listCards()
 {
     global $conn;
     
-    $sqlQuery = "SELECT *
-                 FROM
-                 Card_View";
+    $sqlQuery = "SELECT * FROM `Card_View`";
     
     $stmt = $conn->prepare($sqlQuery);
     $stmt->execute();
