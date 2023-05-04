@@ -55,7 +55,7 @@ $(document).ready(function(){
 			method:"POST",
 			data:{
 				// Copy variables from the modal (popup) to send it to the POST
-				Email_Address: $('#Email_Address').val(),
+				Email_Address: $('#email').val(),
 				firstname: $('#firstname').val(),
 				lastname: $('#lastname').val(),
 				date_of_birth: $('#dob').val(),
