@@ -278,7 +278,7 @@
             		    echo "" . $stmt->fetch()["Draws"];
                     ?>
                 </th></tr>
-        		<tr><th>Win/Loss Ratio
+        		<tr><th>Win/Loss Ratio: 
                     <?php
             		    $sqlQuery = 'SELECT IFNULL((SELECT Win_loss_ratio FROM Player WHERE Person_ID = :email), (SELECT 0)) AS Win_loss_ratio';
             		    $stmt = $conn->prepare($sqlQuery);
@@ -286,7 +286,7 @@
             		    $stmt->execute();
             		    echo "" . $stmt->fetch()["Win_loss_ratio"];
                     ?>
-                :</th></tr>    
+                </th></tr>    
     		</table>
 		</div>
 	</div>
