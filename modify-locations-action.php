@@ -19,8 +19,8 @@ function listLocations()
         $sqlQuery .= ' ORDER BY Address ASC ';
     }
     
+    echo $sqlQuery;
     $stmt = $conn->prepare($sqlQuery);
-    echo $stmt;
     $stmt->execute();
     
     $numberRows = $stmt->rowCount();
