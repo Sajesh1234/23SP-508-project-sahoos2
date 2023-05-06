@@ -248,7 +248,7 @@
             		    $stmt = $conn->prepare($sqlQuery);
                         $stmt->bindValue(':email', $_SESSION["user_ID"]);
             		    $stmt->execute();
-            		    echo $stmt->fetch()["Team"];
+            		    echo "" . $stmt->fetch()["Team"];
                     ?>
                 </th></tr>
        			<tr><th>Wins:</th></tr>
