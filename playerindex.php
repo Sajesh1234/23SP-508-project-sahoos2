@@ -229,7 +229,7 @@
                 ?>
 				</form>
 				<br>
-				<a href="/~23SP_sahoos2/playerindex.php" class="btn btn-primary btn-block btn-large">Save</a>
+				<input type="submit" name="save" id="save" class="btn btn-primary btn-block btn-large" value="Save Changes"/>
 		</div>
         
 	</div>
