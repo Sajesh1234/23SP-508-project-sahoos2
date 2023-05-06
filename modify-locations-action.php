@@ -10,7 +10,7 @@ function listLocations()
     $sqlQuery = "SELECT * FROM Tournament_Location ";
     
     if (! empty($_POST["search"]["value"])) {
-       $sqlQuery .= 'WHERE (Address LIKE "%' . $_POST["search"]["value"] . '%" OR Name LIKE "%' . $_POST["search"]["value"] .  '%" OR Max_Capacity LIKE "%' . $_POST["search"]["value"] . '%" OR Number_of_Tables LIKE "%' . $_POST["search"]["value"] . '%)"';
+       $sqlQuery .= 'WHERE (Address LIKE "%' . $_POST["search"]["value"] . '%" OR Name LIKE "%' . $_POST["search"]["value"] .  '%" OR Max_Capacity LIKE "%' . $_POST["search"]["value"] . '%" OR Number_of_Tables LIKE "%' . $_POST["search"]["value"] . '%")';
     }
     
     if (! empty($_POST["order"])) {
@@ -19,7 +19,6 @@ function listLocations()
         $sqlQuery .= ' ORDER BY Address ASC ';
     }
     
-    echo $sqlQuery;
     $stmt = $conn->prepare($sqlQuery);
     $stmt->execute();
     
