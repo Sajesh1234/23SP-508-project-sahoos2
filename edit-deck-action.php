@@ -34,7 +34,7 @@ function listCards()
     }    
     
     $stmt = $conn->prepare($sqlQuery);
-    $stmt->bindvalue(':Deck', $_GET['name']);
+    $stmt->bindvalue(':Deck', $_POST['name']);
     $stmt->bindvalue(':Player', $_SESSION['user_ID']);
     $stmt->execute();
 

@@ -14,6 +14,7 @@ $(document).ready(function(){
 			url:"edit-deck-action.php",
 			type:"POST",
 			data: {
+					name: $('#deck_name').attr('deck'),
 					action:'listCards'
 				},
 			dataType:"json"
