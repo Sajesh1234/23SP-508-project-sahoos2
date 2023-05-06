@@ -97,37 +97,37 @@ tbody td:nth-child(even) {
 				<div class="modal-body">
 					<div class="form-group">						            			
 						<label>Winner</label>
-						<select class="form-control" id="Winner">
+						<select class="form-control" id="Winner" readonly>
             			    <?php
             			        $sqlQuery = 'SELECT Email_Address FROM Users WHERE type = "Player" ORDER BY Email_Address ASC';
             			        $stmt = $conn->prepare($sqlQuery);
             			        $stmt->execute();
             			        while ($row = $stmt->fetch()) {
-            			            echo "<option readonly value=\"" . $row["Email_Address"] . "\">" . $row["Email_Address"] . "</option>";
+            			            echo "<option value=\"" . $row["Email_Address"] . "\">" . $row["Email_Address"] . "</option>";
             			        }
                             ?>
             			</select>
 										            			
 						<label>Tournament</label>
-						<select class="form-control" id="Tournament">
+						<select class="form-control" id="Tournament" readonly>
             			    <?php
             			        $sqlQuery = 'SELECT ID, Name FROM Tournament ORDER BY Name ASC';
             			        $stmt = $conn->prepare($sqlQuery);
             			        $stmt->execute();
             			        while ($row = $stmt->fetch()) {
-            			            echo "<option readonly value=\"" . $row["ID"] . "\">" . $row["Name"] . "</option>";
+            			            echo "<option value=\"" . $row["ID"] . "\">" . $row["Name"] . "</option>";
             			        }
                             ?>
             			</select>	
 						
 						<label>Referee</label>
-						<select class="form-control" id="Ref">
+						<select class="form-control" id="Ref" readonly>
             			    <?php
             			        $sqlQuery = 'SELECT Person_ID FROM Ref ORDER BY Person_ID ASC';
             			        $stmt = $conn->prepare($sqlQuery);
             			        $stmt->execute();
             			        while ($row = $stmt->fetch()) {
-            			            echo "<option readonly value=\"" . $row["Person_ID"] . "\">" . $row["Person_ID"] . "</option>";
+            			            echo "<option value=\"" . $row["Person_ID"] . "\">" . $row["Person_ID"] . "</option>";
             			        }
                             ?>
             			</select>
