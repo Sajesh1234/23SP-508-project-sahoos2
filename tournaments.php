@@ -55,8 +55,8 @@ tbody td:nth-child(even) {
 					<th>Year</th>
 					<th>Prize Money</th>
 					<th>Address</th>
-					<th>Teams</th>
-					<th>Matches</th>
+					<th>View Teams</th>
+					<th>View Matches</th>
 				</tr>
 			</thead>
 		</table>
