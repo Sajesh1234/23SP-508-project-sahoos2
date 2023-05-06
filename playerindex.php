@@ -186,6 +186,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    <script src="js/playerindex.js"></script>
 		<div class ="nav_bar">
 			<ul>
 				<li><a href = "teams">Teams</a></li>
@@ -203,11 +204,18 @@
 			<h1>EDIT INFO</h1>
 				<form method="post">
 				<label for="firstname">First Name:</label>
-				<input type="text" name="firstname" placeholder="Change First Name"/>
+                <?php
+            		$sqlQuery = 'SELECT first_name FROM Users WHERE Email_Address = :email';
+            		$stmt = $conn->prepare($sqlQuery);
+                    $stmt->bindValue(':email', $_SESSION["user_ID"]);
+            		$stmt->execute();
+            		echo "<input type=\"text\" id=\"firstname\" value=\"" . $row["Email_Address"] . "\">" . $row["Email_Address"] . "</option>";
+            		
+                ?>"/>
 				<label for="lastname">Last Name:</label>
-				<input type="text" name="lastname" placeholder="Change Last Name"/>
-				<label for="DateofBirth">Date of Birth:</label>
-				<input type="date" id = "DateofBirth" name="dob" required="required" />	
+				<input type="text" id="lastname" value="Change Last Name"/>
+				<label for="dob">Date of Birth:</label>
+				<input type="date" id = "dob" name="dob" required="required" />	
 				</form>
 				<br>
 				<a href="/~23SP_sahoos2/playerindex.php" class="btn btn-primary btn-block btn-large">Save</a>
