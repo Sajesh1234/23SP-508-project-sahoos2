@@ -50,7 +50,7 @@ function listCards()
         $dataRow[] = $sqlRow['Rarity'];
         $dataRow[] = $sqlRow['Card_Text'];
         $dataRow[] = $sqlRow['Expansion'];
-        if ($sqlRow['In_Deck') {
+        if ($sqlRow['In_Deck']) {
             $dataRow[] = '<button type="button" name="add" ID="' . $sqlRow["ID"] . '" class="btn btn-success btn-sm add">Add to Deck</button>';
         } else {
             $dataRow[] = '<button type="button" name="delete" ID="' . $sqlRow["ID"] . '" class="btn btn-danger btn-sm delete" >Remove from Deck</button>';
