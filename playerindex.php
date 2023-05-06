@@ -251,10 +251,42 @@
             		    echo "" . $stmt->fetch()["Team"];
                     ?>
                 </th></tr>
-       			<tr><th>Wins:</th></tr>
-       			<tr><th>Losses:</th></tr>
-        		<tr><th>Draws:</th></tr>
-        		<tr><th>Win/Loss Ratio:</th></tr>    
+       			<tr><th>Wins:
+                    <?php
+            		    $sqlQuery = 'SELECT IFNULL((SELECT Wins FROM Player WHERE Person_ID = :email), (SELECT 0)) AS Wins';
+            		    $stmt = $conn->prepare($sqlQuery);
+                        $stmt->bindValue(':email', $_SESSION["user_ID"]);
+            		    $stmt->execute();
+            		    echo "" . $stmt->fetch()["Wins"];
+                    ?>
+                </th></tr>
+       			<tr><th>Losses:
+                    <?php
+            		    $sqlQuery = 'SELECT IFNULL((SELECT Losses FROM Player WHERE Person_ID = :email), (SELECT 0)) AS Losses';
+            		    $stmt = $conn->prepare($sqlQuery);
+                        $stmt->bindValue(':email', $_SESSION["user_ID"]);
+            		    $stmt->execute();
+            		    echo "" . $stmt->fetch()["Losses"];
+                    ?>
+                </th></tr>
+        		<tr><th>Draws:
+                    <?php
+            		    $sqlQuery = 'SELECT IFNULL((SELECT Draws FROM Player WHERE Person_ID = :email), (SELECT 0)) AS Draws';
+            		    $stmt = $conn->prepare($sqlQuery);
+                        $stmt->bindValue(':email', $_SESSION["user_ID"]);
+            		    $stmt->execute();
+            		    echo "" . $stmt->fetch()["Draws"];
+                    ?>
+                </th></tr>
+        		<tr><th>Win/Loss Ratio
+                    <?php
+            		    $sqlQuery = 'SELECT IFNULL((SELECT Win_loss_ratio FROM Player WHERE Person_ID = :email), (SELECT 0)) AS Win_loss_ratio';
+            		    $stmt = $conn->prepare($sqlQuery);
+                        $stmt->bindValue(':email', $_SESSION["user_ID"]);
+            		    $stmt->execute();
+            		    echo "" . $stmt->fetch()["Win_loss_ratio"];
+                    ?>
+                :</th></tr>    
     		</table>
 		</div>
 	</div>
