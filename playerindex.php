@@ -202,7 +202,7 @@
 	<div class ="box">
 		<div class="edit">
 			<h1>EDIT INFO</h1>
-				<form method="post">
+				<form method="post" id="user-info-form">
 				<label for="firstname">First Name:</label>
                 <?php
             		$sqlQuery = 'SELECT first_name FROM Users WHERE Email_Address = :email';
