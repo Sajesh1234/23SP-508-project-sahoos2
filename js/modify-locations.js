@@ -39,7 +39,7 @@ $(document).ready(function(){
 				Address: $('#Address').val(),
 				Name: $('#Name').val(),
 				Max_Capacity: $('#Max_Capacity').val(),
-				Tables: $('#Tables').val(),
+				Number_of_Tables: $('#Tables').val(),
 				action: $('#action').val(),
 			},
 			success:function(){
