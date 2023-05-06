@@ -39,6 +39,7 @@ $(document).ready(function(){
 				ID: $('#ID').val(),
 				Name: $('#Name').val(),
 				Year_of_Tournament: $('#Year').val(),
+				Prize: $('#Prize').val(),
 				Location: $('#Location').val(),
 				action: $('#action').val(),
 			},
@@ -64,7 +65,8 @@ $(document).ready(function(){
 				$('#tournament-modal').modal('show');
 				$('#ID').val(ID);
 				$('#Name').val(data.Name);
-				$('#Rarity').val(data.Year_of_Tournament);
+				$('#Year_of_Tournament').val(data.Year_of_Tournament);
+				$('#Prize').val(data.Prize);
 				$('#Location').val(data.Location);
 				$('.modal-title').html("Edit Tournament");
 				$('#action').val('updateTournament');
