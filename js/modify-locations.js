@@ -52,12 +52,12 @@ $(document).ready(function(){
 	});		
 	
 	$("#table-loc").on('click', '.update', function(){
-		var ID = $(this).attr("ID");
+		var Address = $(this).attr("Address");
 		var action = 'getLocation';
 		$.ajax({
 			url:'modify-locations-action.php',
 			method:"POST",
-			data:{ID:ID, action:action},
+			data: {Address:Address, action:action},
 			dataType:"json",
 			success:function(data){
 				// Copy variables from the returned JSON from the SQL query in getUser into the modal (popup)
@@ -74,13 +74,13 @@ $(document).ready(function(){
 	});
 	
 	$("#table-loc").on('click', '.delete', function(){
-		var ID = $(this).attr("ID");
+		var Address = $(this).attr("Address");
 		var action = "deleteLocation";
 		if(confirm("Are you sure you want to delete this location?")) {
 			$.ajax({
 				url:'modify-locations-action.php',
 				method:"POST",
-				data:{ID:ID, action:action},
+				data: {Address:Address, action:action},
 				success:function() {					
 					table.ajax.reload();
 				}
