@@ -53,6 +53,10 @@ tbody td:nth-child(even) {
     display: flex;
     flex-direction: column;
      	}
+
+#table-card tr > *:nth-child(1) {
+	display: none;
+}
 </style>
 
 <?php require_once('connection.php'); global $conn; ?>
