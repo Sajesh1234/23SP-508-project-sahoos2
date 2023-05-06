@@ -80,7 +80,7 @@ $(document).ready(function(){
 		var action = "deletePlayer";
 		if(confirm("Are you sure you want to delete this player's information?")) {
 			$.ajax({
-				url:'modify-player-action.php',
+				url:'modify-players-action.php',
 				method:"POST",
 				data:{email:email, action:action},
 				success:function() {					
