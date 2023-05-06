@@ -3,7 +3,7 @@
 <title>TCG Cards</title>
 <?php require_once('header.php'); ?>
 
-<script src="js/cards.js"></script>
+<script src="js/list-decks.js"></script>
 </head>
 <style>
 body { 
@@ -63,7 +63,7 @@ tbody td {
 	<h4>Your Decks</h4>
 	<div class ="box">
 	<div class="pb-3">
-		<button type="button" id="addCard" class="btn btn-primary btn-sm">Create New Deck</button>
+		<button type="button" id="addDeck" class="btn btn-primary btn-sm">Create New Deck</button>
 	</div> 
 	<div class ="box">
 		<table id="table-deck" class="table table-bordered table-striped" style="width:100%">
@@ -74,6 +74,29 @@ tbody td {
 				</tr>
 			</thead>
 		</table>
+	</div>
+</div>
+
+<div id="deck-modal" class="modal fade">
+	<div class="modal-dialog">
+		<form method="post" id="deck-form">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Create New Deck</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">						            			
+						<label>Name</label><input type="text" class="form-control" id="Name" required>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<input type="hidden" name="ID" id="ID"/>
+					<input type="hidden" name="action" id="action" value=""/>
+					<input type="submit" name="save" id="save" class="btn btn-info" value="Save" />
+					<button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</form>
 	</div>
 </div>
 
