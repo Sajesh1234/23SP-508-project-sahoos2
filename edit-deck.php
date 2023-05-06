@@ -60,7 +60,7 @@ tbody td:nth-child(even) {
 <body>
 
 <div class="cards">
-	<h4 style = "text-align:center; color: white;">Deck: <?php echo $_GET['name'] ?></h4>
+	<h4 style = "text-align:center; color: white;">Editing: <?php echo $_GET['name'] ?></h4>
 	<div class ="box">
         	
 	<div>
