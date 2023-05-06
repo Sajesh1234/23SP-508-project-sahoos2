@@ -90,7 +90,7 @@ function updatePlayer()
                         Draws = :Draws,
                         Losses = :Losses,
                         Play_count = :Play_count,
-                        Team = :Team,
+                        Team = :Team
                     WHERE Person_ID = :Email_Address";
         
         $stmt = $conn->prepare($sqlQuery);
