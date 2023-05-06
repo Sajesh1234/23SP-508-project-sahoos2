@@ -152,12 +152,12 @@
 <div class = "body">
     <h2>Admin Tools</h2>
     <ul>
-    	<li><a href="modify-users.php">Users (add, edit, delete, search, sort, export)</a></li>
-    	<li><a href="advanced-employee.php">Players (add, edit, delete, search, sort, export)</a></li>
-    	<li><a href="advanced-employee.php">Cards (add, edit, delete, search, sort, export)</a></li>
-    	<li><a href="advanced-employee.php">Tournaments (add, edit, delete, search, sort, export)</a></li>
-    	<li><a href="advanced-employee.php">Matches (add, edit, delete, search, sort, export)</a></li>
-    	<li><a href="advanced-employee.php">Tournament locations (add, edit, delete, search, sort, export)</a></li>
+    	<li><a href="modify-users.php">Modify Users</a></li>
+    	<li><a href="modify-players.php">Modify Player W/L and Team Info</a></li>
+    	<li><a href="advanced-employee.php">Add and Edit Cards</a></li>
+    	<li><a href="advanced-employee.php">Add and Edit Tournament locations</a></li>
+    	<li><a href="advanced-employee.php">Add and Edit Tournaments</a></li>
+    	<li><a href="advanced-employee.php">Add and Edit Matches)</a></li>
     </ul>
 </div>
 
