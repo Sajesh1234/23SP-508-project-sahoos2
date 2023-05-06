@@ -8,7 +8,6 @@ $(document).ready(function(){
 				// Copy variables from the form to send it to the POST
 				firstname: $('#firstname').val(),
 				lastname: $('#lastname').val(),
-				dob: $('#dob').val(),
 				action: "update",
 			}
 		})
