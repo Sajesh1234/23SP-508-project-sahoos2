@@ -63,11 +63,6 @@ tbody td:nth-child(even) {
 
 <div class="matches">
 	<h4 style = "text-align:center; color: white;">Match Information</h4>
-	
-	<div class ="box">
-	<div class="pb-3">
-		<button type="button" id="addMatch" class="btn btn-primary btn-sm">Add Match Info</button>
-	</div> 
         	
 	<div>
 		<table id="table-match" class="table table-bordered table-striped">
@@ -97,7 +92,7 @@ tbody td:nth-child(even) {
 				<div class="modal-body">
 					<div class="form-group">						            			
 						<label>Winner</label>
-						<select class="form-control" id="Winner" readonly>
+						<select class="form-control" id="Winner">
             			    <?php
             			        $sqlQuery = 'SELECT Email_Address FROM Users WHERE type = "Player" ORDER BY Email_Address ASC';
             			        $stmt = $conn->prepare($sqlQuery);
@@ -109,7 +104,7 @@ tbody td:nth-child(even) {
             			</select>
 										            			
 						<label>Tournament</label>
-						<select class="form-control" id="Tournament" readonly>
+						<select class="form-control" id="Tournament">
             			    <?php
             			        $sqlQuery = 'SELECT ID, Name FROM Tournament ORDER BY Name ASC';
             			        $stmt = $conn->prepare($sqlQuery);
@@ -121,7 +116,7 @@ tbody td:nth-child(even) {
             			</select>	
 						
 						<label>Referee</label>
-						<select class="form-control" id="Ref" readonly>
+						<select class="form-control" id="Ref">
             			    <?php
             			        $sqlQuery = 'SELECT Person_ID FROM Ref ORDER BY Person_ID ASC';
             			        $stmt = $conn->prepare($sqlQuery);

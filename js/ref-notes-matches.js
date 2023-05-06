@@ -30,7 +30,11 @@ $(document).ready(function(){
 	
 	$("#match-modal").on('submit','#match-form', function(event){
 		event.preventDefault();
-		$('#save').attr('disabled','disabled');
+		$('#save').attr('disabled', 'disabled');
+		// Reenable selects so they get POSTed
+		$('#Winner').prop('disabled', false);
+		$('#Tournament').prop('disabled', false);
+		$('#Ref').prop('disabled', false);
 		$.ajax({
 			url:"modify-matches-action.php",
 			method:"POST",
@@ -55,6 +59,10 @@ $(document).ready(function(){
 	$("#table-match").on('click', '.update', function(){
 		var ID = $(this).attr("ID");
 		var action = 'getMatch';
+		// Disable the selects so the ref can only modify their notes
+		$('#Winner').prop('disabled', true);
+		$('#Tournament').prop('disabled', true);
+		$('#Ref').prop('disabled', true);
 		$.ajax({
 			url:'modify-matches-action.php',
 			method:"POST",
