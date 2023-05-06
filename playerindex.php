@@ -244,7 +244,7 @@
 				<tr><th></th></tr>
       			<tr><th>Team:
                     <?php
-            		    $sqlQuery = 'SELECT Team FROM Players WHERE Person_ID = :email';
+            		    $sqlQuery = 'SELECT Team FROM Player WHERE Person_ID = :email';
             		    $stmt = $conn->prepare($sqlQuery);
                         $stmt->bindValue(':email', $_SESSION["user_ID"]);
             		    $stmt->execute();
