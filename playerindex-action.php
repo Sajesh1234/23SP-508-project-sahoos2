@@ -15,7 +15,7 @@ function updateUserInfo()
                         SET
                         first_name = :firstname,
                         last_name = :lastname
-                    WHERE ID = :ID";
+                    WHERE Email_Address = :ID";
         
         $stmt = $conn->prepare($sqlQuery);
         $stmt->bindValue(':firstname', $_POST["firstname"]);
