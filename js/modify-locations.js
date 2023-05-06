@@ -65,7 +65,7 @@ $(document).ready(function(){
 				$('#Address').val(Address);
 				$('#Name').val(data.Name);
 				$('#Max_Capacity').val(data.Max_Capacity);
-				$('#Tables').val(data.Tables);
+				$('#Tables').val(data.Number_of_Tables);
 				$('.modal-title').html("Edit Location");
 				$('#action').val('updateLocation');
 				$('#save').val('Save');
