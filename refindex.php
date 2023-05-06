@@ -201,16 +201,34 @@
 	<div class ="box">
 		<div class="edit">
 			<h1>EDIT INFO</h1>
-				<form method="post">
+				<form method="post" id="user-info-form">
 				<label for="firstname">First Name:</label>
-				<input type="text" name="firstname" placeholder="Change First Name"/>
+                <?php
+            		$sqlQuery = 'SELECT first_name FROM Users WHERE Email_Address = :email';
+            		$stmt = $conn->prepare($sqlQuery);
+                    $stmt->bindValue(':email', $_SESSION["user_ID"]);
+            		$stmt->execute();
+            		echo "<input type=\"text\" id=\"firstname\" required value=\"" . $stmt->fetch()["first_name"] . "\">";
+                ?>
 				<label for="lastname">Last Name:</label>
-				<input type="text" name="lastname" placeholder="Change Last Name"/>
-				<label for="DateofBirth">Date of Birth:</label>
-				<input type="date" id = "DateofBirth" name="dob" required="required" />	
+                <?php
+            		$sqlQuery = 'SELECT last_name FROM Users WHERE Email_Address = :email';
+            		$stmt = $conn->prepare($sqlQuery);
+                    $stmt->bindValue(':email', $_SESSION["user_ID"]);
+            		$stmt->execute();
+            		echo "<input type=\"text\" id=\"lastname\" required value=\"" . $stmt->fetch()["last_name"] . "\">";
+                ?>
+				<label for="dob">Date of Birth:</label>
+                <?php
+            		$sqlQuery = 'SELECT date_of_birth FROM Users WHERE Email_Address = :email';
+            		$stmt = $conn->prepare($sqlQuery);
+                    $stmt->bindValue(':email', $_SESSION["user_ID"]);
+            		$stmt->execute();
+            		echo "<input type=\"date\" id=\"dob\" required readonly value=\"" . $stmt->fetch()["date_of_birth"] . "\">";
+                ?>
 				</form>
 				<br>
-				<a href="/~23SP_sahoos2/playerindex.php" class="btn btn-primary btn-block btn-large">Save</a>
+				<input type="submit" name="save" id="save" class="btn btn-primary btn-block btn-large" value="Save Changes"/>
 		</div>
         
 	</div>
