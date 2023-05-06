@@ -10,7 +10,7 @@ function listDecks()
 {
     global $conn;
     
-    $sqlQuery = "SELECT IFNULL((SELECT * FROM Deck WHERE Player = :email), (SELECT 'You have no decks created!' as Name)) ";
+    $sqlQuery = "SELECT Name FROM Deck WHERE Player = :email ";
     
     $stmt = $conn->prepare($sqlQuery);
     $stmt->bindValue(':email', $_SESSION['user_ID']);
