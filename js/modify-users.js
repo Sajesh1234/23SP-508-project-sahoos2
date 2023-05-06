@@ -5,7 +5,7 @@ $(document).ready(function(){
 		"autoWidth": false,
 		"processing":true,
 		"serverSide":true,
-		"pageLength":15,
+		"pageLength":-1,
 		"lengthMenu": [[-1, 15, 25, 50, 100], ["All", 15, 25, 50, 100]], // Number of rows to show on the table
 		"responsive": true,
 		"language": {processing: '<i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>'}, // Loading icon while data is read from the database
