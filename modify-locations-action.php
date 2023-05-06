@@ -14,9 +14,9 @@ function listLocations()
     }
     
     if (! empty($_POST["order"])) {
-        $sqlQuery .= 'ORDER BY ' . ($_POST['order']['0']['column'] + 1) . ' ' . $_POST['order']['0']['dir'] . ' ';
+        $sqlQuery .= ' ORDER BY ' . ($_POST['order']['0']['column'] + 1) . ' ' . $_POST['order']['0']['dir'] . ' ';
     } else {
-        $sqlQuery .= 'ORDER BY Address ASC ';
+        $sqlQuery .= ' ORDER BY Address ASC ';
     }
     
     $stmt = $conn->prepare($sqlQuery);
