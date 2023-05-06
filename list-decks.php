@@ -82,11 +82,11 @@ tbody td {
 		<form method="post" id="deck-form">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title">Create New Deck</h4>
+					<h4 class="modal-title" style ="color:black">Create New Deck</h4>
 				</div>
 				<div class="modal-body">
 					<div class="form-group">						            			
-						<label>Name</label><input type="text" class="form-control" id="Name" required>
+						<label style ="color:black">Name</label><input type="text" class="form-control" id="Name" required>
 					</div>
 				</div>
 				<div class="modal-footer">
