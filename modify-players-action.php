@@ -98,6 +98,7 @@ function updatePlayer()
         $stmt->bindValue(':Draws', $_POST["Draws"]);
         $stmt->bindValue(':Losses', $_POST["Losses"]);
         $stmt->bindValue(':Play_count', ($_POST["Wins"] + $_POST["Draws"] + $_POST["Losses"]));
+        $stmt->bindValue(':Team', $_POST["Team"]);
         $stmt->bindValue(':Email_Address', $_POST["email"]);
         $stmt->execute();
     }
