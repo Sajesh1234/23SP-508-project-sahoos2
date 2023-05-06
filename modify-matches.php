@@ -37,7 +37,7 @@
 				<tr>
 					<th>ID</th>
 					<th>Winner</th>
-					<th hidden>TID</th>
+					<th>TID</th>
 					<th>Tournament</th>
 					<th>Ref</th>
 					<th>Ref Notes</th>
