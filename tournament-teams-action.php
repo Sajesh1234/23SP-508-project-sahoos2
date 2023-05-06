@@ -21,7 +21,7 @@ function listTeams()
     
     while ($sqlRow = $stmt->fetch()) {
         $dataRow = array();
-        $dataRow[] = $sqlRow['Name'];
+        $dataRow[] = $sqlRow['Team'];
         $dataRow[] = $sqlRow['Team_Score'];
         
         $dataTable[] = $dataRow;
