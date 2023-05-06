@@ -127,7 +127,7 @@ tbody td:nth-child(even) {
                             ?>
             			</select>
 						
-						<label>Ref Notes</label> <input type="text" class="form-control" id="Ref_notes" required>
+						<label>Ref Notes</label> <input type="text" class="form-control" id="Ref_notes">
 					</div>
 				</div>
 				<div class="modal-footer">
