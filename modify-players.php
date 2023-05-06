@@ -60,9 +60,9 @@
 					<div class="form-group">						
 						<label>Email</label> <input type="text" class="form-control" id="email" placeholder="Enter email" required>
 
-						<label>Wins</label><input type="number" class="form-control" id="Wins" placeholder="Enter first name" required>
+						<label>Wins</label><input type="number" class="form-control" id="Wins" required>
 						
-						<label>Draws</label> <input type="number" class="form-control" id="Draws" placeholder="Enter last name" required>
+						<label>Draws</label> <input type="number" class="form-control" id="Draws" required>
 						
 						<label>Losses</label> <input type="number" class="form-control" id="Losses" required>
 						

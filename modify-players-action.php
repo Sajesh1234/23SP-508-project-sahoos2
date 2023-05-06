@@ -7,7 +7,7 @@ function listPlayers()
 {
     global $conn;
     
-    $sqlQuery = "SELECT * FROM Players ";
+    $sqlQuery = "SELECT * FROM Player ";
     
     if (! empty($_POST["search"]["value"])) {
        $sqlQuery .= 'WHERE (u.Person_ID LIKE "%' . $_POST["search"]["value"] . '%" OR u.Team LIKE "%' . $_POST["search"]["value"] . '%"';
@@ -67,7 +67,7 @@ function getPlayer()
         
         $sqlQuery = "SELECT Person_ID as `Email Address`,
                      Wins, Draws, Losses, Play_count, Win_loss_ratio, Team
-                     FROM Players
+                     FROM Player
                      WHERE Person_ID = :Email_Address";
         
         $stmt = $conn->prepare($sqlQuery);
@@ -84,7 +84,7 @@ function updatePlayer()
     
     if ($_POST['email']) {
         
-        $sqlQuery = "UPDATE Players
+        $sqlQuery = "UPDATE Player
                         SET
                         Wins = :Wins,
                         Draws = :Draws,
@@ -107,7 +107,7 @@ function addPlayer()
 {
     global $conn;
     
-    $sqlQuery = "INSERT INTO Players
+    $sqlQuery = "INSERT INTO Player
                  (Person_ID, Wins, Draws, Losses, Play_count, Team)
                  VALUES
                  (:Email_Address, :Wins, :Draws, :Losses, :Play_count, :Team)";
@@ -128,7 +128,7 @@ function deletePlayer()
     
     if ($_POST["email"]) {
         
-        $sqlQuery = "DELETE FROM Players WHERE Person_ID = :Email_Address";
+        $sqlQuery = "DELETE FROM Player WHERE Person_ID = :Email_Address";
         
         $stmt = $conn->prepare($sqlQuery);
         $stmt->bindValue(':Email_Address', $_POST["email"]);
