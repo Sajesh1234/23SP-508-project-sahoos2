@@ -26,7 +26,7 @@ function listDecks()
        
         $dataRow[] = $sqlRow['Name'];
         $dataRow[] = '<a href="edit-deck?name=' . $sqlRow["Name"] . '" class="btn">Edit Deck</a>
-                      <button type="button" name="delete" Name="' . $sqlRow["Name"] . '" class="btn btn-danger btn-sm delete" >Delete</button>';
+                      <button type="button" name="delete" Deck="' . $sqlRow["Name"] . '" class="btn btn-danger btn-sm delete" >Delete</button>';
         
         $dataTable[] = $dataRow;
     }
