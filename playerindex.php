@@ -209,7 +209,7 @@
             		$stmt = $conn->prepare($sqlQuery);
                     $stmt->bindValue(':email', $_SESSION["user_ID"]);
             		$stmt->execute();
-            		echo "<input type=\"text\" id=\"firstname\" value=\"" . $row["Email_Address"] . "\">" . $row["Email_Address"] . "</option>";
+            		echo "<input type=\"text\" id=\"firstname\" value=\"" . $stmt->fetch()["first_name"] . "\">";
             		
                 ?>"/>
 				<label for="lastname">Last Name:</label>
