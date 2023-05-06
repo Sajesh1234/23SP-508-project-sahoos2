@@ -280,7 +280,7 @@
                 </th></tr>
         		<tr><th>Win/Loss Ratio: 
                     <?php
-            		    $sqlQuery = 'SELECT IFNULL((SELECT Win_loss_ratio FROM Player WHERE Person_ID = :email), (SELECT 0)) AS Win_loss_ratio';
+            		    $sqlQuery = 'SELECT IFNULL((SELECT Win_loss_ratio FROM Player WHERE Person_ID = :email), (SELECT N/A)) AS Win_loss_ratio';
             		    $stmt = $conn->prepare($sqlQuery);
                         $stmt->bindValue(':email', $_SESSION["user_ID"]);
             		    $stmt->execute();
