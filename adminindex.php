@@ -69,10 +69,10 @@
            }
 
         .box{
-     	  background:rgba(0, 0, 0, 0.5);
+        
           width:50%;
      	  height: 450px;
-     	  padding: 100px;
+     	  top: 100px;
      	  color:white;
      	  position: fixed;
      	
@@ -120,6 +120,22 @@
           color:white;
           font-weight:normal;
           }
+          
+          a:link { text-decoration: none; 
+          color:white;}
+          a:visited { text-decoration: none;
+          color:white; }
+          a:hover {
+            color: grey;
+               background-color: transparent;
+               text-decoration: none;}
+          a:active {
+            color: white;
+            background-color: transparent;
+            text-decoration: none;}
+
+
+}
 </style>
 
 
@@ -132,8 +148,6 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 		<div class ="nav_bar">
 			<ul>
-				<li><a href = "teams">Teams</a></li>
-				<li><a href = "cards"> Cards </a></li>
 				<li><a href = "logout">Logout</a></li>
 				
 			</ul>
@@ -141,15 +155,8 @@
 	</div>
 </header>
 
-<-- TODO not this lmao-->
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class = "body">
+<div class = "admin">
+<div class = "box">
     <h2>Admin Tools</h2>
     <ul>
     	<li><a href="modify-users.php">Modify Users</a></li>
@@ -159,6 +166,7 @@
     	<li><a href="modify-tournaments.php">Add and Edit Tournaments</a></li>
     	<li><a href="modify-matches.php">Add and Edit Matches</a></li>
     </ul>
+</div>
 </div>
 
 
