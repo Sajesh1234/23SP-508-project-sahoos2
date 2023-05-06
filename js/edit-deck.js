@@ -27,7 +27,7 @@ $(document).ready(function(){
 		$.ajax({
 			url: 'edit-deck-action.php',
 			method: "POST",
-			data: { ID: ID, action: action },
+			data: { name: $('#deck_name').attr('deck'), ID: ID, action: action },
 			success: function () {
 				table.ajax.reload();
 			}
@@ -40,7 +40,7 @@ $(document).ready(function(){
 		$.ajax({
 			url: 'edit-deck-action.php',
 			method: "POST",
-			data: { ID: ID, action: action },
+			data: { name: $('#deck_name').attr('deck'), ID: ID, action: action },
 			success: function () {
 				table.ajax.reload();
 			}

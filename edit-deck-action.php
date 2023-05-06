@@ -50,10 +50,12 @@ function listCards()
         $dataRow[] = $sqlRow['Rarity'];
         $dataRow[] = $sqlRow['Card_Text'];
         $dataRow[] = $sqlRow['Expansion'];
-        $dataRow[] = $sqlRow['In_Deck'];
+        if ($sqlRow['In_Deck') {
+            $dataRow[] = '<button type="button" name="add" ID="' . $sqlRow["ID"] . '" class="btn btn-success btn-sm add">Add to Deck</button>';
+        } else {
+            $dataRow[] = '<button type="button" name="delete" ID="' . $sqlRow["ID"] . '" class="btn btn-danger btn-sm delete" >Remove from Deck</button>';
+        }
         
-        $dataRow[] = '<button type="button" name="add" ID="' . $sqlRow["ID"] . '" class="btn btn-success btn-sm add">Add to Deck</button>
-                      <button type="button" name="delete" ID="' . $sqlRow["ID"] . '" class="btn btn-danger btn-sm delete" >Remove from Deck</button>';
         
         $dataTable[] = $dataRow;
     }
@@ -66,62 +68,20 @@ function listCards()
     
     echo json_encode($output);
 }
-    
-function getCard()
-{
-    global $conn;
-    
-    if ($_POST["ID"]) {
-        
-        $sqlQuery = "SELECT Name, Rarity, Card_Text, Expansion FROM Card 
-                     WHERE ID = :ID";
-        
-        $stmt = $conn->prepare($sqlQuery);
-        $stmt->bindValue(':ID', $_POST["ID"]);
-        $stmt->execute();
-        
-        echo json_encode($stmt->fetch());
-    }
-}
-
-function updateCard()
-{
-    global $conn;
-    
-    if ($_POST['ID']) {
-        
-        $sqlQuery = "UPDATE Card
-                        SET
-                        Name = :Name,
-                        Rarity = :Rarity,
-                        Card_Text = :Card_Text,
-                        Expansion = :Expansion
-                    WHERE ID = :ID";
-        
-        $stmt = $conn->prepare($sqlQuery);
-        $stmt->bindValue(':Name', $_POST["Name"]);
-        $stmt->bindValue(':Rarity', $_POST["Rarity"]);
-        $stmt->bindValue(':Card_Text', $_POST["Card_Text"]);
-        $stmt->bindValue(':Expansion', $_POST["Expansion"]);
-        $stmt->bindValue(':ID', $_POST["ID"]);
-        $stmt->execute();
-    }
-}
 
 function addCard()
 {
     global $conn;
     
-    $sqlQuery = "INSERT INTO Card
-                 (Name, Rarity, Card_Text, Expansion)
+    $sqlQuery = "INSERT INTO Deck_Cards
+                 (Deck, Player, Card)
                  VALUES
-                 (:Name, :Rarity, :Card_Text, :Expansion)";
+                 (:Deck, :Player, :Card)";
     
     $stmt = $conn->prepare($sqlQuery);
-    $stmt->bindValue(':Name', $_POST["Name"]);
-    $stmt->bindValue(':Rarity', $_POST["Rarity"]);
-    $stmt->bindValue(':Card_Text', $_POST["Card_Text"]);
-    $stmt->bindValue(':Expansion', $_POST["Expansion"]);
+    $stmt->bindValue(':Deck', $_POST["name"]);
+    $stmt->bindValue(':Player', $_SESSION["user_ID"]);
+    $stmt->bindValue(':Card', $_POST["ID"]);
     $stmt->execute();
 }
 
@@ -129,14 +89,14 @@ function deleteCard()
 {
     global $conn;
     
-    if ($_POST["ID"]) {
+    $sqlQuery = "DELETE FROM Deck_Cards WHERE (Deck= :Deck AND Player = :Player AND Card = :Card)";
         
-        $sqlQuery = "DELETE FROM Card WHERE ID = :ID";
-        
-        $stmt = $conn->prepare($sqlQuery);
-        $stmt->bindValue(':ID', $_POST["ID"]);
-        $stmt->execute();
-    }
+    $stmt = $conn->prepare($sqlQuery);
+    $stmt->bindValue(':Deck', $_POST["name"]);
+    $stmt->bindValue(':Player', $_SESSION["user_ID"]);
+    $stmt->bindValue(':Card', $_POST["ID"]);
+    $stmt->execute();
+    
 }
 
 if(!empty($_POST['action']) && $_POST['action'] == 'listCards') {
@@ -144,12 +104,6 @@ if(!empty($_POST['action']) && $_POST['action'] == 'listCards') {
 }
 if(!empty($_POST['action']) && $_POST['action'] == 'addCard') {
     addCard();
-}
-if(!empty($_POST['action']) && $_POST['action'] == 'getCard') {
-    getCard();
-}
-if(!empty($_POST['action']) && $_POST['action'] == 'updateCard') {
-    updateCard();
 }
 if(!empty($_POST['action']) && $_POST['action'] == 'deleteCard') {
     deleteCard();
