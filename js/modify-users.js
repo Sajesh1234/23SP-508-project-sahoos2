@@ -6,7 +6,7 @@ $(document).ready(function(){
 		"processing":true,
 		"serverSide":true,
 		"pageLength":15,
-		"lengthMenu":[[15, 25, 50, 100, -1], [15, 25, 50, 100, "All"]], // Number of rows to show on the table
+		"lengthMenu": [[-1, 15, 25, 50, 100], ["All", 15, 25, 50, 100]], // Number of rows to show on the table
 		"responsive": true,
 		"language": {processing: '<i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>'}, // Loading icon while data is read from the database
 		"order":[],
@@ -18,25 +18,6 @@ $(document).ready(function(){
 				},
 			dataType:"json"
 		},
-		"buttons": [
-				{
-					extend: 'excelHtml5',
-					title: 'TCG Users',
-					filename: 'TCG Users',
-					exportOptions: {columns: [1,2,3,4,5,6]}
-				},
-				{
-					extend: 'pdfHtml5',
-					title: 'TCG Users',
-					filename: 'TCG Users',
-					exportOptions: {columns: [1,2,3,4,5,6]}
-				},
-				{
-					extend: 'print',
-					title: 'Employees',
-					filename: 'Employees',
-					exportOptions: {columns: [1,2,3,4,5,6]}
-				}]
 	});	
 	
 	$("#addUser").click(function(){
