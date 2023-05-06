@@ -40,6 +40,7 @@
 					<th>Rarity</th>
 					<th>Text</th>
 					<th>Expansion</th>
+					<th>Actions</th>
 				</tr>
 			</thead>
 		</table>
