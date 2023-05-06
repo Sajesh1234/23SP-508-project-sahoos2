@@ -65,11 +65,11 @@
             			<label>Location</label>
 						<select class="form-control" id="Location">
             			    <?php
-            			        $sqlQuery = "SELECT Name FROM Tournament_Location ORDER BY Name ASC";
+            			        $sqlQuery = "SELECT Address FROM Tournament_Location ORDER BY Address ASC";
             			        $stmt = $conn->prepare($sqlQuery);
             			        $stmt->execute();
             			        while ($row = $stmt->fetch()) {
-            			            echo "<option value=\"" . $row["Name"] . "\">" . $row["Name"] . "</option>";
+            			            echo "<option value=\"" . $row["Address"] . "\">" . $row["Address"] . "</option>";
             			        }
                             ?>
             			</select>
