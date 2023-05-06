@@ -24,6 +24,7 @@ function listTeams()
         
        
         $dataRow[] = $sqlRow['Name'];
+        $dataRow[] = $sqlRow['Team_Score'];
         
         $dataTable[] = $dataRow;
     }

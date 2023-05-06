@@ -74,6 +74,7 @@ tbody td {
 			<thead>
 				<tr>
 					<th>Name</th>
+					<th>Points</th>
 				</tr>
 			</thead>
 		</table>
