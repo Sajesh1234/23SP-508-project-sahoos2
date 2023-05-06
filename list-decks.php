@@ -60,6 +60,10 @@ tbody td {
 <div class = "cards">
 	<h4>Your Decks</h4>
 	<div class ="box">
+	<div class="pb-3">
+		<button type="button" id="addCard" class="btn btn-primary btn-sm">Add New Card</button>
+	</div> 
+	<div class ="box">
 		<table id="table-deck" class="table table-bordered table-striped" style="width:100%">
 			<thead>
 				<tr>
