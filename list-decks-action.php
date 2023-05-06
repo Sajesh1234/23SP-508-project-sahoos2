@@ -40,9 +40,28 @@ function listDecks()
     echo json_encode($output);
 }
 
+function addDeck()
+{
+    global $conn;
+    
+    $sqlQuery = "INSERT INTO Deck
+                 (Name, Player)
+                 VALUES
+                 (:Name, :Player)";
+    
+    $stmt = $conn->prepare($sqlQuery);
+    $stmt->bindValue(':Name', $_POST["Name"]);
+    $stmt->bindValue(':Player', $_SESSION["user_ID"]);
+    $stmt->execute();
+}
+
 
 if(!empty($_POST['action']) && $_POST['action'] == 'listDecks') {
     listDecks();
+}
+
+if(!empty($_POST['action']) && $_POST['action'] == 'addDeck') {
+    addDeck();
 }
 
 ?>

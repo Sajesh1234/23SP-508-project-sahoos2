@@ -19,6 +19,7 @@ $(document).ready(function(){
 	$("#addDeck").click(function () {
 		$('#deck-form')[0].reset();
 		$('#deck-modal').modal('show'); // Open model (popup) on the browser
+		$('.modal-title').html("Create New Deck");
 		$('#action').val('addDeck');
 		$('#save').val('Add');
 	});
@@ -33,13 +34,12 @@ $(document).ready(function(){
 			method: "POST",
 			data: {
 				// Copy variables from the modal (popup) to send it to the POST
-				ID: $('#ID').val(),
 				Name: $('#Name').val(),
 				action: $('#action').val(),
 			},
 			success: function () {
-				$('#card-modal').modal('hide');
-				$('#card-form')[0].reset();
+				$('#deck-modal').modal('hide');
+				$('#deck-form')[0].reset();
 				$('#save').attr('disabled', false);
 				table.ajax.reload();
 			}
