@@ -1,6 +1,8 @@
 <?php
 require_once ('connection.php');
 
+session_start();
+
 global $conn;
 
 function updateUserInfo()
