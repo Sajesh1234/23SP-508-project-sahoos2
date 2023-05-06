@@ -28,7 +28,7 @@
 	<h4>Player Information</h4>
 	
 	<div class="pb-3">
-		<button type="button" id="addPlayer" class="btn btn-primary btn-sm">Add New Player</button>
+		<button type="button" id="addPlayer" class="btn btn-primary btn-sm">Add Player Info</button>
 	</div> 
         	
 	<div>
@@ -57,8 +57,18 @@
 					<h4 class="modal-title">Edit Player</h4>
 				</div>
 				<div class="modal-body">
-					<div class="form-group">						
-						<label>Email</label> <input type="text" class="form-control" id="email" placeholder="Enter email" required>
+					<div class="form-group">						            			
+						<label>Email</label>
+						<select class="form-control" id="email">
+            			    <?php
+            			        $sqlQuery = 'SELECT Email_Address FROM Users WHERE type = "Player" ORDER BY Email_Address ASC';
+            			        $stmt = $conn->prepare($sqlQuery);
+            			        $stmt->execute();
+            			        while ($row = $stmt->fetch()) {
+            			            echo "<option value=\"" . $row["Email_Address"] . "\">" . $row["Email_Address"] . "</option>";
+            			        }
+                            ?>
+            			</select>
 
 						<label>Wins</label><input type="number" class="form-control" id="Wins" required>
 						
