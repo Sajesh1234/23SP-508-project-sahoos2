@@ -37,10 +37,10 @@ $(document).ready(function(){
 			data:{
 				// Copy variables from the modal (popup) to send it to the POST
 				email: $('#email').val(),
-				firstname: $('#firstname').val(),
-				lastname: $('#lastname').val(),
-				date_of_birth: $('#dob').val(),
-				type: $('#acc').val(),
+				Wins: $('#Wins').val(),
+				Draws: $('#Draws').val(),
+				Losses: $('#Losses').val(),
+				Team: $('#Team').val(),
 				action: $('#action').val(),
 			},
 			success:function(){
@@ -64,10 +64,10 @@ $(document).ready(function(){
 				// Copy variables from the returned JSON from the SQL query in getUser into the modal (popup)
 				$('#player-modal').modal('show');
 				$('#email').val(email);
-				$('#firstname').val(data.first_name);
-				$('#lastname').val(data.last_name);
-				$('#dob').val(data.date_of_birth);
-				$('#type').val(data.type);
+				$('#Wins').val(data.Wins);
+				$('#Draws').val(data.Draws);
+				$('#Losses').val(data.Losses);
+				$('#Team').val(data.Team);
 				$('.modal-title').html("Edit Player");
 				$('#action').val('updatePlayer');
 				$('#save').val('Save');
