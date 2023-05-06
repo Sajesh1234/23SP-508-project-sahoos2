@@ -11,7 +11,7 @@ function updateUserInfo()
     
     if ($_SESSION["user_ID"]) {
         
-        $sqlQuery = "UPDATE User
+        $sqlQuery = "UPDATE Users
                         SET
                         first_name = :firstname,
                         last_name = :lastname
