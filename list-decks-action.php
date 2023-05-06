@@ -3,6 +3,9 @@ require_once ('connection.php');
 
 global $conn;
 
+// Start or resume session variables
+session_start();
+
 function listDecks()
 {
     global $conn;
