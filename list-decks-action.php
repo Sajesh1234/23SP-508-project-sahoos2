@@ -67,6 +67,13 @@ function deleteDeck()
     
     if ($_POST["Name"]) {
         
+        $sqlQuery = "DELETE FROM Deck_Cards WHERE (Deck = :Name AND Player = :Player) ";
+        
+        $stmt = $conn->prepare($sqlQuery);
+        $stmt->bindValue(':Name', $_POST["Name"]);
+        $stmt->bindValue(':Player', $_SESSION["user_ID"]);
+        $stmt->execute();
+        
         $sqlQuery = "DELETE FROM Deck WHERE (Name = :Name AND Player = :Player) ";
         
         $stmt = $conn->prepare($sqlQuery);
