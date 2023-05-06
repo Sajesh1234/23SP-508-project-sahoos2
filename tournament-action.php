@@ -24,8 +24,8 @@ function listTournaments()
         $dataRow[] = $sqlRow['Year_of_Tournament'];
         $dataRow[] = $sqlRow['Prize'];
         $dataRow[] = $sqlRow['Location'];
-        $dataRow[] = '<a href = "tournament-teams?ID=' . $sqlRow['ID'] . '" />';
-        $dataRow[] = '<a href = "tournament-matchess?ID=' . $sqlRow['ID'] . '" />';
+        $dataRow[] = '<a href = "tournament-teams?ID=' . $sqlRow['ID'] . '">Teams</a>';
+        $dataRow[] = '<a href = "tournament-matches?ID=' . $sqlRow['ID'] . '">Matches</a>';
         
         $dataTable[] = $dataRow;
     }
