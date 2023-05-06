@@ -23,7 +23,7 @@ function listTournaments()
         $dataRow[] = $sqlRow['Name'];
         $dataRow[] = $sqlRow['Year_of_Tournament'];
         $dataRow[] = $sqlRow['Prize'];
-        $dataRow[] = '<a href = "location?loc=' . $sqlRow['Location'] . '">$sqlRow['Location']</a>';
+        $dataRow[] = '<a href = "location?loc=' . $sqlRow['Location'] . '">' . $sqlRow['Location'] . '</a>';
         $dataRow[] = '<a href = "tournament-teams?ID=' . $sqlRow['ID'] . '">Teams</a>';
         $dataRow[] = '<a href = "tournament-matches?ID=' . $sqlRow['ID'] . '">Matches</a>';
         
