@@ -36,7 +36,7 @@ function listMatches()
     while ($sqlRow = $stmt->fetch()) {
         $dataRow = array();
         
-        $dataRow[] = $sqlRow['ID'];
+        $dataRow[] = '<tr hidden>' . $sqlRow['ID'] . '</tr>';
         $dataRow[] = $sqlRow['Winner'];
         $dataRow[] = $sqlRow['TID'];
         $dataRow[] = $sqlRow['Tournament'];

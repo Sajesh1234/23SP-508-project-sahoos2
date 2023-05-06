@@ -68,7 +68,7 @@ tbody td:nth-child(even) {
 		<table id="table-match" class="table table-bordered table-striped">
 			<thead>
 				<tr>
-					<th>ID</th>
+					<th hidden>ID</th>
 					<th>Winner</th>
 					<th>TID</th>
 					<th>Tournament</th>
