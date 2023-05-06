@@ -21,6 +21,9 @@ body {
 .cards{
 text-align: center;
 color:white;
+width: 100%;
+display: flex;
+flex-direction: column;
 }
 
 table { 
@@ -43,6 +46,11 @@ tbody td {
    text-align: center;
  
 }
+.box{
+     	padding: 10px;
+        background:#AAA3B8;
+     	
+     	}
 </style>
 
 <?php require_once('connection.php'); ?>
@@ -51,7 +59,7 @@ tbody td {
 
 <div class = "cards">
 	<h4>Cards</h4>
-	<div>
+	<div class ="box">
 		<table id="table-Card" class="table table-bordered table-striped" style="width:100%">
 			<thead>
 				<tr>
