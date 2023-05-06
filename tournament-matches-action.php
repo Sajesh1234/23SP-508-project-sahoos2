@@ -10,7 +10,7 @@ function listMatches()
     $sqlQuery = "SELECT 
                     (SELECT GROUP_CONCAT(Name SEPARATOR ', ') FROM (SELECT concat(first_name, ' ', last_name) AS Name FROM Match_Players mp JOIN Users u ON (mp.Player = u.Email_Address) WHERE Game_Match = gm.ID) AS Names) AS Players, 
                     (SELECT concat(first_name, ' ', last_name) FROM Users WHERE Email_Address = gm.Winner) AS Winner, 
-                    (SELECT Team FROM Player WHERE Person_ID = Winner) AS Winner_Team, 
+                    (SELECT Team FROM Player WHERE Person_ID = gm.Winner) AS Winner_Team, 
                     (SELECT concat(first_name, ' ', last_name) FROM Users WHERE Email_Address = gm.Ref) AS Ref, 
                     gm.Ref_notes 
                     FROM Game_Match gm
