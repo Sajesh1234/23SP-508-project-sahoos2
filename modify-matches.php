@@ -57,8 +57,8 @@
 				</div>
 				<div class="modal-body">
 					<div class="form-group">						            			
-						<label>Email</label>
-						<select class="form-control" id="email">
+						<label>Winner</label>
+						<select class="form-control" id="Winner">
             			    <?php
             			        $sqlQuery = 'SELECT Email_Address FROM Users WHERE type = "Player" ORDER BY Email_Address ASC';
             			        $stmt = $conn->prepare($sqlQuery);
@@ -68,25 +68,32 @@
             			        }
                             ?>
             			</select>
-
-						<label>Wins</label><input type="number" class="form-control" id="Wins" required>
-						
-						<label>Draws</label> <input type="number" class="form-control" id="Draws" required>
-						
-						<label>Losses</label> <input type="number" class="form-control" id="Losses" required>
-						
-            			<label>Team</label>
-						<select class="form-control" id="Team">
+										            			
+						<label>Tournament</label>
+						<select class="form-control" id="Tournament">
             			    <?php
-            			        $sqlQuery = "SELECT Name FROM Team ORDER BY Name ASC";
+            			        $sqlQuery = 'SELECT ID, Name FROM Tournament ORDER BY Name ASC';
             			        $stmt = $conn->prepare($sqlQuery);
             			        $stmt->execute();
             			        while ($row = $stmt->fetch()) {
-            			            echo "<option value=\"" . $row["Name"] . "\">" . $row["Name"] . "</option>";
+            			            echo "<option value=\"" . $row["ID"] . "\">" . $row["Name"] . "</option>";
+            			        }
+                            ?>
+            			</select>	
+						
+						<label>Referee</label>
+						<select class="form-control" id="Ref">
+            			    <?php
+            			        $sqlQuery = 'SELECT Email_Address FROM Users WHERE type = "Ref" ORDER BY Email_Address ASC';
+            			        $stmt = $conn->prepare($sqlQuery);
+            			        $stmt->execute();
+            			        while ($row = $stmt->fetch()) {
+            			            echo "<option value=\"" . $row["Email_Address"] . "\">" . $row["Email_Address"] . "</option>";
             			        }
                             ?>
             			</select>
-
+						
+						<label>Ref Notes</label> <input type="text" class="form-control" id="Ref_notes" required>
 					</div>
 				</div>
 				<div class="modal-footer">

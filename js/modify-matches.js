@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	
-	var table = $('#table-player').DataTable({
+	var table = $('#table-match').DataTable({
 		"dom": 'Blfrtip',
 		"autoWidth": false,
 		"processing":true,
@@ -11,78 +11,78 @@ $(document).ready(function(){
 		"language": {processing: '<i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>'}, // Loading icon while data is read from the database
 		"order":[],
 		"ajax":{
-			url:"modify-players-action.php",
+			url:"modify-matches-action.php",
 			type:"POST",
 			data:{
-					action:'listPlayers'
+					action:'listMatches'
 				},
 			dataType:"json"
 		},
 	});	
 	
-	$("#addPlayer").click(function(){
-		$('#player-form')[0].reset();
-		$('#player-modal').modal('show'); // Open model (popup) on the browser
-		$('.modal-title').html("Add Player");
-		$('#action').val('addPlayer');
+	$("#addMatch").click(function(){
+		$('#match-form')[0].reset();
+		$('#match-modal').modal('show'); // Open model (popup) on the browser
+		$('.modal-title').html("Add Match");
+		$('#action').val('addMatch');
 		$('#save').val('Add');
 	});
 	
-	$("#player-modal").on('submit','#player-form', function(event){
+	$("#match-modal").on('submit','#match-form', function(event){
 		event.preventDefault();
 		$('#save').attr('disabled','disabled');
 		$.ajax({
-			url:"modify-players-action.php",
+			url:"modify-matches-action.php",
 			method:"POST",
 			data:{
 				// Copy variables from the modal (popup) to send it to the POST
-				email: $('#email').val(),
-				Wins: $('#Wins').val(),
-				Draws: $('#Draws').val(),
-				Losses: $('#Losses').val(),
-				Team: $('#Team').val(),
+				ID: $('#ID').val(),
+				Winner: $('#Winner').val(),
+				TID: $('#Tournament').val(),
+				Ref: $('#Ref').val(),
+				Ref_notes: $('#Ref_notes').val(),
 				action: $('#action').val(),
 			},
 			success:function(){
-				$('#player-modal').modal('hide');
-				$('#player-form')[0].reset();
+				$('#match-modal').modal('hide');
+				$('#match-form')[0].reset();
 				$('#save').attr('disabled', false);
 				table.ajax.reload();
 			}
 		})
 	});		
 	
-	$("#table-player").on('click', '.update', function(){
-		var email = $(this).attr("Email_Address");
-		var action = 'getPlayer';
+	$("#table-match").on('click', '.update', function(){
+		var ID = $(this).attr("ID");
+		var action = 'getMatch';
 		$.ajax({
-			url:'modify-players-action.php',
+			url:'modify-matches-action.php',
 			method:"POST",
-			data:{email:email, action:action},
+			data:{ID:ID, action:action},
 			dataType:"json",
 			success:function(data){
 				// Copy variables from the returned JSON from the SQL query in getUser into the modal (popup)
-				$('#player-modal').modal('show');
-				$('#email').val(email);
-				$('#Wins').val(data.Wins);
-				$('#Draws').val(data.Draws);
-				$('#Losses').val(data.Losses);
-				$('#Team').val(data.Team);
-				$('.modal-title').html("Edit Player");
-				$('#action').val('updatePlayer');
+				$('#match-modal').modal('show');
+				$('#ID').val(ID);
+				$('#Winner').val(data.Wins);
+				$('#Tournament').val(data.Tournament);
+				$('#Ref').val(data.Ref);
+				$('#Ref_notes').val(data.Ref_notes);
+				$('.modal-title').html("Edit Match");
+				$('#action').val('updateMatch');
 				$('#save').val('Save');
 			}
 		})
 	});
 	
-	$("#table-player").on('click', '.delete', function(){
-		var email = $(this).attr("Email_Address");
-		var action = "deletePlayer";
-		if(confirm("Are you sure you want to delete this player's information?")) {
+	$("#table-match").on('click', '.delete', function(){
+		var ID = $(this).attr("ID");
+		var action = "deleteMatch";
+		if(confirm("Are you sure you want to delete this match?")) {
 			$.ajax({
-				url:'modify-players-action.php',
+				url:'modify-matches-action.php',
 				method:"POST",
-				data:{email:email, action:action},
+				data:{ID:ID, action:action},
 				success:function() {					
 					table.ajax.reload();
 				}
