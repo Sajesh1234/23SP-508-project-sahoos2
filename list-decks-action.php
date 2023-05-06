@@ -10,7 +10,7 @@ function listDecks()
 {
     global $conn;
     
-    $sqlQuery = "SELECT * FROM Deck WHERE Player = :email`";
+    $sqlQuery = "SELECT * FROM Deck WHERE Player = :email ";
     
     $stmt = $conn->prepare($sqlQuery);
     $stmt->bindValue(':email', $_SESSION['user_ID']);
