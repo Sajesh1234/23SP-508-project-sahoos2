@@ -65,7 +65,7 @@ $(document).ready(function(){
 				$('#tournament-modal').modal('show');
 				$('#ID').val(ID);
 				$('#Name').val(data.Name);
-				$('#Year_of_Tournament').val(data.Year_of_Tournament);
+				$('#Year').val(data.Year_of_Tournament);
 				$('#Prize').val(data.Prize);
 				$('#Location').val(data.Location);
 				$('.modal-title').html("Edit Tournament");
