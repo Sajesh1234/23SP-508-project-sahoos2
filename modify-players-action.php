@@ -10,7 +10,7 @@ function listPlayers()
     $sqlQuery = "SELECT * FROM Player ";
     
     if (! empty($_POST["search"]["value"])) {
-       $sqlQuery .= 'WHERE (u.Person_ID LIKE "%' . $_POST["search"]["value"] . '%" OR u.Team LIKE "%' . $_POST["search"]["value"] . '%"';
+       $sqlQuery .= 'WHERE (Person_ID LIKE "%' . $_POST["search"]["value"] . '%" OR Team LIKE "%' . $_POST["search"]["value"] . '%"';
     }
     
     if (! empty($_POST["order"])) {
