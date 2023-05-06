@@ -13,7 +13,7 @@ $(document).ready(function(){
 		"ajax":{
 			url:"edit-deck-action.php",
 			type:"POST",
-			data:{
+			data: {
 					action:'listCards'
 				},
 			dataType:"json"

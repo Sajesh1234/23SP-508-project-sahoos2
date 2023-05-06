@@ -60,8 +60,8 @@ tbody td:nth-child(even) {
 <body>
 
 <div class="cards">
-	<h4 style = "text-align:center; color: white;">Editing: <?php echo $_GET['name'] ?></h4>
-	<div class ="box">
+	<h4 id = "deck_name" Deck = <?php echo '\"' . $_GET['name'] . '\"' ?> style = "text-align:center; color: white;">Editing: <?php echo $_GET['name'] ?></h4>
+	<div class ="box"> 
         	
 	<div>
 		<table id="table-card" class="table table-bordered table-striped">
