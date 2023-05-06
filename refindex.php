@@ -242,7 +242,7 @@
 		<div class="edit-cards">
 			<h1 class ='decks'>Notes</h1>
 			<div class = 'move'>
-			<a href= 'cards' class = "btn btn-primary btn-block btn-large" > CLICK HERE TO ADD NOTES TO THE SERVER</a>
+			<a href= 'ref-notes-matches' class = "btn btn-primary btn-block btn-large" > CLICK HERE TO ADD NOTES TO YOUR MATCHES</a>
 			</div>
 	
 		</div>
