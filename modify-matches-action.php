@@ -82,7 +82,7 @@ function updateMatch()
     
     if ($_POST['ID']) {
         
-        $sqlQuery = "UPDATE Match
+        $sqlQuery = "UPDATE Game_Match
                         SET
                         Winner = :Winner,
                         Tournament = :TID,
@@ -104,7 +104,7 @@ function addMatch()
 {
     global $conn;
     
-    $sqlQuery = "INSERT INTO Match
+    $sqlQuery = "INSERT INTO game_Match
                  (Winner, Tournament, Ref, Ref_notes)
                  VALUES
                  (:Winner, :TID, :Ref, :Ref_notes)";
@@ -123,7 +123,7 @@ function deleteMatch()
     
     if ($_POST["ID"]) {
         
-        $sqlQuery = "DELETE FROM Match WHERE ID = :ID";
+        $sqlQuery = "DELETE FROM Game_Match WHERE ID = :ID";
         
         $stmt = $conn->prepare($sqlQuery);
         $stmt->bindValue(':ID', $_POST["ID"]);
