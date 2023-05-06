@@ -45,4 +45,21 @@ $(document).ready(function(){
 			}
 		})
 	});
+
+	$("#table-deck").on('click', '.delete', function () {
+		var Name = $(this).attr("Name");
+		var action = "deleteDeck";
+		if (confirm("Are you sure you want to delete this deck?")) {
+			$.ajax({
+				url: 'list-decks-action.php',
+				method: "POST",
+				data: { Name: Name, action: action },
+				success: function () {
+					table.ajax.reload();
+				}
+			})
+		} else {
+			return false;
+		}
+	});
 });

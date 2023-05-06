@@ -55,6 +55,21 @@ function addDeck()
     $stmt->execute();
 }
 
+function deleteDeck()
+{
+    global $conn;
+    
+    if ($_POST["Name"]) {
+        
+        $sqlQuery = "DELETE FROM Deck WHERE (Name = :Name AND Player = :Player) ";
+        
+        $stmt = $conn->prepare($sqlQuery);
+        $stmt->bindValue(':Name', $_POST["Name"]);
+        $stmt->bindValue(':Player', $_SESSION["user_ID"]);
+        $stmt->execute();
+    }
+}
+
 
 if(!empty($_POST['action']) && $_POST['action'] == 'listDecks') {
     listDecks();
@@ -62,6 +77,9 @@ if(!empty($_POST['action']) && $_POST['action'] == 'listDecks') {
 
 if(!empty($_POST['action']) && $_POST['action'] == 'addDeck') {
     addDeck();
+}
+if(!empty($_POST['action']) && $_POST['action'] == 'deleteDeck') {
+    deleteDeck();
 }
 
 ?>
