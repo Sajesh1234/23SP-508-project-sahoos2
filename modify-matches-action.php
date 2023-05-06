@@ -104,7 +104,7 @@ function addMatch()
 {
     global $conn;
     
-    $sqlQuery = "INSERT INTO game_Match
+    $sqlQuery = "INSERT INTO Game_Match
                  (Winner, Tournament, Ref, Ref_notes)
                  VALUES
                  (:Winner, :TID, :Ref, :Ref_notes)";
