@@ -233,7 +233,7 @@
 <div class = "ViewTournament">
 	<div class ="box4">
 		<div class="Tourna">
-			<h1 class = "tourna-ment">VIEW ON GOING MATCHES</h1>
+			<h1 class = "tourna-ment"><a href = "tournaments" style = "text-decoration:none;color: white;">CLICK HERE TO SEE TOURNAMENTS</a></h1>
 			<div id="carouselExampleDark" class="carousel carousel-dark slide">
   <div class="carousel-indicators">
   </div>
