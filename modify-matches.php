@@ -84,11 +84,11 @@
 						<label>Referee</label>
 						<select class="form-control" id="Ref">
             			    <?php
-            			        $sqlQuery = 'SELECT Email_Address FROM Users WHERE type = "Ref" ORDER BY Email_Address ASC';
+            			        $sqlQuery = 'SELECT Person_ID FROM Ref ORDER BY Person_ID ASC';
             			        $stmt = $conn->prepare($sqlQuery);
             			        $stmt->execute();
             			        while ($row = $stmt->fetch()) {
-            			            echo "<option value=\"" . $row["Email_Address"] . "\">" . $row["Email_Address"] . "</option>";
+            			            echo "<option value=\"" . $row["Person_ID"] . "\">" . $row["Person_ID"] . "</option>";
             			        }
                             ?>
             			</select>
