@@ -18,7 +18,8 @@ $(document).ready(function(){
 				},
 			dataType:"json"
 		},
-	});	
+	});
+	$('#table-match tr > *:nth-child(2)').hide();
 	
 	$("#addMatch").click(function(){
 		$('#match-form')[0].reset();
