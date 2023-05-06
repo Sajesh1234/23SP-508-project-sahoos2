@@ -53,7 +53,9 @@ tbody td {
      	}
 </style>
 
-<?php require_once('connection.php'); ?>
+<?php require_once('connection.php');
+	require_once('player-only.php');
+?>
 
 <body>
 
@@ -61,7 +63,7 @@ tbody td {
 	<h4>Your Decks</h4>
 	<div class ="box">
 	<div class="pb-3">
-		<button type="button" id="addCard" class="btn btn-primary btn-sm">Add New Card</button>
+		<button type="button" id="addCard" class="btn btn-primary btn-sm">Create New Deck</button>
 	</div> 
 	<div class ="box">
 		<table id="table-deck" class="table table-bordered table-striped" style="width:100%">
