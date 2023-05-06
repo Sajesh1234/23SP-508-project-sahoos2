@@ -11,7 +11,7 @@ $(document).ready(function(){
 		"language": {processing: '<i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>'}, // Loading icon while data is read from the database
 		"order":[],
 		"ajax":{
-			url:"modify-matches-action.php",
+			url:"ref-notes-matches-action.php",
 			type:"POST",
 			data:{
 					action:'listMatches'
@@ -36,7 +36,7 @@ $(document).ready(function(){
 		$('#Tournament').prop('disabled', false);
 		$('#Ref').prop('disabled', false);
 		$.ajax({
-			url:"modify-matches-action.php",
+			url:"ref-notes-matches-action.php",
 			method:"POST",
 			data:{
 				// Copy variables from the modal (popup) to send it to the POST
@@ -64,7 +64,7 @@ $(document).ready(function(){
 		$('#Tournament').prop('disabled', true);
 		$('#Ref').prop('disabled', true);
 		$.ajax({
-			url:'modify-matches-action.php',
+			url:'ref-notes-matches-action.php',
 			method:"POST",
 			data:{ID:ID, action:action},
 			dataType:"json",
@@ -81,22 +81,5 @@ $(document).ready(function(){
 				$('#save').val('Save');
 			}
 		})
-	});
-	
-	$("#table-match").on('click', '.delete', function(){
-		var ID = $(this).attr("ID");
-		var action = "deleteMatch";
-		if(confirm("Are you sure you want to delete this match?")) {
-			$.ajax({
-				url:'modify-matches-action.php',
-				method:"POST",
-				data:{ID:ID, action:action},
-				success:function() {					
-					table.ajax.reload();
-				}
-			})
-		} else {
-			return false;
-		}
 	});
 });
