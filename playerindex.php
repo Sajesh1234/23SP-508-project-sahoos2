@@ -209,13 +209,24 @@
             		$stmt = $conn->prepare($sqlQuery);
                     $stmt->bindValue(':email', $_SESSION["user_ID"]);
             		$stmt->execute();
-            		echo "<input type=\"text\" id=\"firstname\" value=\"" . $stmt->fetch()["first_name"] . "\">";
-            		
-                ?>"
+            		echo "<input type=\"text\" id=\"firstname\" required value=\"" . $stmt->fetch()["first_name"] . "\">";
+                ?>
 				<label for="lastname">Last Name:</label>
-				<input type="text" id="lastname" value="Change Last Name"/>
+                <?php
+            		$sqlQuery = 'SELECT last_name FROM Users WHERE Email_Address = :email';
+            		$stmt = $conn->prepare($sqlQuery);
+                    $stmt->bindValue(':email', $_SESSION["user_ID"]);
+            		$stmt->execute();
+            		echo "<input type=\"text\" id=\"lastname\" required value=\"" . $stmt->fetch()["last_name"] . "\">";
+                ?>
 				<label for="dob">Date of Birth:</label>
-				<input type="date" id = "dob" name="dob" required="required" />	
+                <?php
+            		$sqlQuery = 'SELECT date_of_birth FROM Users WHERE Email_Address = :email';
+            		$stmt = $conn->prepare($sqlQuery);
+                    $stmt->bindValue(':email', $_SESSION["user_ID"]);
+            		$stmt->execute();
+            		echo "<input type=\"date\" id=\"dob\" required readonly value=\"" . $stmt->fetch()["date_of_birth"] . "\">";
+                ?>
 				</form>
 				<br>
 				<a href="/~23SP_sahoos2/playerindex.php" class="btn btn-primary btn-block btn-large">Save</a>
