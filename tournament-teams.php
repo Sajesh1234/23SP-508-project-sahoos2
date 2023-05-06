@@ -3,7 +3,7 @@
 <title>TCG Teams</title>
 <?php require_once('header.php'); ?>
 
-<script src="js/teams.js"></script>
+<script src="js/tournament-teams.js"></script>
 </head>
 
 

@@ -9,7 +9,7 @@ function listTeams()
     
     $sqlQuery = "SELECT *
                  FROM Tournament_Teams
-                 WHERE Tournament = :ID";
+                 WHERE Tournament = :ID ";
     
     $stmt = $conn->prepare($sqlQuery);
     $stmt->bindvalue(':ID', $_POST['ID']);
@@ -21,8 +21,6 @@ function listTeams()
     
     while ($sqlRow = $stmt->fetch()) {
         $dataRow = array();
-        
-       
         $dataRow[] = $sqlRow['Name'];
         $dataRow[] = $sqlRow['Team_Score'];
         
