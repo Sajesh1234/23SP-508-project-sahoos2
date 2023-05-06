@@ -297,7 +297,7 @@
 		<div class="edit-cards">
 			<h1 class ='decks'>EDIT DECKS</h1>
 			<div class = 'move'>
-			<a href= 'cards' class = "btn btn-primary btn-block btn-large" > CLICK HERE TO EDIT</a>
+			<a href= 'list-decks' class = "btn btn-primary btn-block btn-large" > CLICK HERE TO EDIT</a>
 			</div>
 	<div id="carouselExampleDark" class="carousel carousel-dark slide">
   <div class="carousel-indicators">
