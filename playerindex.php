@@ -211,7 +211,7 @@
             		$stmt->execute();
             		echo "<input type=\"text\" id=\"firstname\" value=\"" . $stmt->fetch()["first_name"] . "\">";
             		
-                ?>"/>
+                ?>"
 				<label for="lastname">Last Name:</label>
 				<input type="text" id="lastname" value="Change Last Name"/>
 				<label for="dob">Date of Birth:</label>
