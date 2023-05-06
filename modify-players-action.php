@@ -113,11 +113,11 @@ function addPlayer()
                  (:Email_Address, :Wins, :Draws, :Losses, :Play_count, :Team)";
     
     $stmt = $conn->prepare($sqlQuery);
-    $stmt->bindValue(':Email_Address', $_POST["Email_Address"]);
+    $stmt->bindValue(':Email_Address', $_POST["email"]);
     $stmt->bindValue(':Wins', $_POST["Wins"]);
     $stmt->bindValue(':Draws', $_POST["Draws"]);
     $stmt->bindValue(':Losses', $_POST["Losses"]);
-    $stmt->bindValue(':Play_count', $_POST["Play_count"]);
+    $stmt->bindValue(':Play_count', ($_POST["Wins"] + $_POST["Draws"] + $_POST["Losses"]));
     $stmt->bindValue(':Team', $_POST["Team"]);
     $stmt->execute();
 }
