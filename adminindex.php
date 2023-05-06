@@ -157,7 +157,7 @@
     	<li><a href="modify-cards.php">Add and Edit Cards</a></li>
     	<li><a href="modify-locations.php">Add and Edit Tournament locations</a></li>
     	<li><a href="modify-tournaments.php">Add and Edit Tournaments</a></li>
-    	<li><a href="advanced-employee.php">Add and Edit Matches</a></li>
+    	<li><a href="modify-matches.php">Add and Edit Matches</a></li>
     </ul>
 </div>
 
