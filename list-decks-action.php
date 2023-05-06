@@ -19,18 +19,24 @@ function listDecks()
     $numberRows = $stmt->rowCount();
     
     $dataTable = array();
-    
-    while ($sqlRow = $stmt->fetch()) {
-        $dataRow = array();
+
+    if ($numberRows > 0) {
+        while ($sqlRow = $stmt->fetch()) {
+            $dataRow = array();
         
        
-        $dataRow[] = $sqlRow['Name'];
-        $dataRow[] = '<a href="edit-deck?name=' . $sqlRow["Name"] . '" class="btn">Edit Deck</a>
-                      <button type="button" name="delete" Deck="' . $sqlRow["Name"] . '" class="btn btn-danger btn-sm delete" >Delete</button>';
+            $dataRow[] = $sqlRow['Name'];
+            $dataRow[] = '<a href="edit-deck?name=' . $sqlRow["Name"] . '" class="btn">Edit Deck</a>
+                          <button type="button" name="delete" Deck="' . $sqlRow["Name"] . '" class="btn btn-danger btn-sm delete" >Delete</button>';
         
+            $dataTable[] = $dataRow;
+        }
+    } else { // No data in table 
+        $dataRow = array();
+        $dataRow[] = "You have no decks!";
+        $dataRow[] = "";
         $dataTable[] = $dataRow;
     }
-    
     $output = array(
         "recordsTotal" => $numberRows,
         "recordsFiltered" => $numberRows,
