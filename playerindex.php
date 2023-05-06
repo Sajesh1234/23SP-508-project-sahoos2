@@ -242,7 +242,15 @@
 			<h1>VIEW INFO</h1>
 			<table>
 				<tr><th></th></tr>
-      			<tr><th>Team:</th></tr>
+      			<tr><th>Team:
+                    <?php
+            		    $sqlQuery = 'SELECT Team FROM Players WHERE Person_ID = :email';
+            		    $stmt = $conn->prepare($sqlQuery);
+                        $stmt->bindValue(':email', $_SESSION["user_ID"]);
+            		    $stmt->execute();
+            		    echo $stmt->fetch()["Team"];
+                    ?>
+                </th></tr>
        			<tr><th>Wins:</th></tr>
        			<tr><th>Losses:</th></tr>
         		<tr><th>Draws:</th></tr>
