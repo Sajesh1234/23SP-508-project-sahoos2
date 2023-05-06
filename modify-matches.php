@@ -37,7 +37,7 @@
 				<tr>
 					<th>ID</th>
 					<th>Winner</th>
-					<th style="visibility:collapse;">TID</th>
+					<th style="visibility:hidden;">TID</th>
 					<th>Tournament</th>
 					<th>Ref</th>
 					<th>Ref Notes</th>
