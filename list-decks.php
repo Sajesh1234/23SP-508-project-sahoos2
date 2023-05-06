@@ -77,7 +77,28 @@ tbody td {
 	</div>
 </div>
 
-
+<div id="deck-modal" class="modal fade">
+	<div class="modal-dialog">
+		<form method="post" id="deck-form">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Create New Deck</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">						            			
+						<label>Name</label><input type="text" class="form-control" id="Name" required>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<input type="hidden" name="ID" id="ID"/>
+					<input type="hidden" name="action" id="action" value=""/>
+					<input type="submit" name="save" id="save" class="btn btn-info" value="Save" />
+					<button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
 
 </body>
 </html>
