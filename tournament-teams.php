@@ -68,7 +68,7 @@ tbody td {
         $stmt = $conn->prepare($sqlQuery);
         $stmt->bindvalue(':ID', $_GET['ID']);
         $stmt->execute();
-	    echo $stmt->fetch() ?> </h4>
+	    echo $stmt->fetch()[0] ?> </h4>
 	<div class = "box">
 		<table id="table-Team" class="table table-bordered table-striped" style = "width: 100%">
 			<thead>
