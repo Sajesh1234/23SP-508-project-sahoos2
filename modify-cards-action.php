@@ -10,7 +10,7 @@ function listCards()
     $sqlQuery = "SELECT ID, Name, Rarity, Card_Text, Expansion FROM Card ";
     
     if (! empty($_POST["search"]["value"])) {
-       $sqlQuery .= 'WHERE (Name LIKE "%' . $_POST["search"]["value"] . '%" OR Rarity LIKE "%' . $_POST["search"]["value"] . '%"' . '%" OR Card_Text LIKE "%' . $_POST["search"]["value"] . '%"'. '%" OR Expansion LIKE "%' . $_POST["search"]["value"] . '%") ';
+       $sqlQuery .= 'WHERE (Name LIKE "%' . $_POST["search"]["value"] . '%" OR Rarity LIKE "%' . $_POST["search"]["value"] .  '%" OR Card_Text LIKE "%' . $_POST["search"]["value"] . '%" OR Expansion LIKE "%' . $_POST["search"]["value"] . '%") ';
     }
     
     if (! empty($_POST["order"])) {
