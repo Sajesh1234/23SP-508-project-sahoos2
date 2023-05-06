@@ -244,7 +244,7 @@
 				<tr><th></th></tr>
       			<tr><th>Team:
                     <?php
-            		    $sqlQuery = 'SELECT IFNULL((SELECT Team FROM Player WHERE Person_ID = :email), (SELECT "No Team" AS Team))';
+            		    $sqlQuery = 'SELECT IFNULL((SELECT Team FROM Player WHERE Person_ID = :email), (SELECT "No Team")) AS Team';
             		    $stmt = $conn->prepare($sqlQuery);
                         $stmt->bindValue(':email', $_SESSION["user_ID"]);
             		    $stmt->execute();
