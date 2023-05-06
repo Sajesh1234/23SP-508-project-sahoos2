@@ -7,7 +7,7 @@ function listTournaments()
 {
     global $conn;
     
-    $sqlQuery = "SELECT * FROM `Tournament_View`";
+    $sqlQuery = "SELECT * FROM `Tournament`";
     
     $stmt = $conn->prepare($sqlQuery);
     $stmt->execute();
@@ -24,6 +24,8 @@ function listTournaments()
         $dataRow[] = $sqlRow['Year_of_Tournament'];
         $dataRow[] = $sqlRow['Prize'];
         $dataRow[] = $sqlRow['Location'];
+        $dataRow[] = '<a href = "tournament-teams?ID=' . $sqlRow['ID'] . '" />';
+        $dataRow[] = '<a href = "tournament-matchess?ID=' . $sqlRow['ID'] . '" />';
         
         $dataTable[] = $dataRow;
     }
