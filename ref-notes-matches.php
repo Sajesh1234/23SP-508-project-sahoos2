@@ -61,6 +61,9 @@ tbody td:nth-child(even) {
 #table-match tr > *:nth-child(1) {
 	display: none;
 }
+#table-match tr > *:nth-child(3) {
+	display: none;
+}
 </style>
 
 <body>
