@@ -82,11 +82,11 @@ $(document).ready(function(){
 			success:function(data){
 				// Copy variables from the returned JSON from the SQL query in getUser into the modal (popup)
 				$('#user-modal').modal('show');
-				$('#Email_Address').val(Email_Address);
+				$('#Email_Address').val(email);
 				$('#firstname').val(data.first_name);
 				$('#lastname').val(data.last_name);
-				$('#dob').val(data.dob);
-				$('#type').val(data.acc);
+				$('#dob').val(data.date_of_birth);
+				$('#type').val(data.type);
 				$('.modal-title').html("Edit User");
 				$('#action').val('updateUser');
 				$('#save').val('Save');
