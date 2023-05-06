@@ -20,6 +20,7 @@ function listLocations()
     }
     
     $stmt = $conn->prepare($sqlQuery);
+    echo $stmt;
     $stmt->execute();
     
     $numberRows = $stmt->rowCount();
