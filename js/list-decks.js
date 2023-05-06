@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	$('#table-deck').DataTable({
+	var table = $('#table-deck').DataTable({
 		"dom": 'Blfrtip',
 		"ordering": false,
 		"searching": false,
