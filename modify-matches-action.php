@@ -124,7 +124,7 @@ function addMatch()
                      VALUES
                      (:ID, :Player)";
         
-        echo $player;
+        //echo $player;
         $stmt = $conn->prepare($sqlQuery);
         $stmt->bindValue(':ID', $_POST["ID"]);
         $stmt->bindValue(':Player', $player);
