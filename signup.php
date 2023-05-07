@@ -34,9 +34,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			$stmt->execute();
 
 		}
+		
+		// Start or resume session variables
+		session_start();
 
-        // Redirect to main page 
-        header("Location: index.php");
+		// Sign the new acc in 
+		$_SESSION['user_ID'] = $_POST['email'];
+        $_SESSION['user_type'] = $_POST['acc'];
+
+        // Redirect to appropriate main page 
+		if(isset($_SESSION['user_type'])) {
+			if($_SESSION['user_type'] == "Admin") {
+				header("Location: adminindex");
+			}
+			elseif($_SESSION['user_type'] == "Ref") {
+				header("Location: refindex");
+			}
+			elseif($_SESSION['user_type'] == "Player") {
+				header("Location: playerindex");
+			}
+			else {
+				header("Location: index");
+			}
+		}
 	}
 	else {
 		// TODO prettify this lol
