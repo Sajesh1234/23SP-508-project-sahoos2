@@ -118,8 +118,7 @@ function addMatch()
     $stmt->bindValue(':Ref_notes', $_POST["Ref_notes"]);
     $stmt->execute();
     $Match_ID = $conn->lastInsertId();
-    echo $Match_ID;
-    
+
     foreach ($_POST['Players'] as $player) {
         $sqlQuery = "INSERT INTO Match_Players
                      (Game_Match, Player)
