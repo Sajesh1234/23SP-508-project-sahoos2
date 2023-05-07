@@ -117,6 +117,18 @@ function addMatch()
     $stmt->bindValue(':Ref', $_POST["Ref"]);
     $stmt->bindValue(':Ref_notes', $_POST["Ref_notes"]);
     $stmt->execute();
+    
+    foreach ($_POST['Players'] as $player) {}
+        $sqlQuery = "INSERT INTO Match_Players
+                     (Game_Match, Player)
+                     VALUES
+                     (:ID, :Player)";
+    
+        $stmt = $conn->prepare($sqlQuery);
+        $stmt->bindValue(':Winner', $_POST["ID"]);
+        $stmt->bindValue(':Player', $player);
+        $stmt->execute();
+    }
 }
 
 function deleteMatch()

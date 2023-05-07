@@ -65,7 +65,7 @@ $(document).ready(function(){
 				// Copy variables from the returned JSON from the SQL query in getUser into the modal (popup)
 				$('#match-modal').modal('show');
 				$('#ID').val(ID);
-				$('#Players').val(data.Players);
+				$('#Players').val(data.Player_Emails);
 				$('#Winner').val(data.Winner_Email);
 				$('#Tournament').val(data.TID);
 				$('#Ref').val(data.Ref);
