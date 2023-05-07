@@ -118,7 +118,7 @@ function addMatch()
     $stmt->bindValue(':Ref_notes', $_POST["Ref_notes"]);
     $stmt->execute();
     
-    foreach ($_POST['Players'] as $player) {}
+    foreach ($_POST['Players'] as $player) {
         $sqlQuery = "INSERT INTO Match_Players
                      (Game_Match, Player)
                      VALUES
