@@ -119,7 +119,7 @@ function addMatch()
     $stmt->bindValue(':Ref', $_POST["Ref"]);
     $stmt->bindValue(':Ref_notes', $_POST["Ref_notes"]);
     $stmt->execute();
-    $Match_ID = $stmt->fetch();
+    $Match_ID = json_encode($stmt->fetch());
     echo $Match_ID;
     
     foreach ($_POST['Players'] as $player) {
