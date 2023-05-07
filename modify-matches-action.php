@@ -38,7 +38,7 @@ function listMatches()
         
         $dataRow[] = $sqlRow['ID'];
         $dataRow[] = $sqlRow['Players'];
-        $dataRow[] = $sqlRow['Winner'];
+        $dataRow[] = $sqlRow['Winner_Email'];
         $dataRow[] = $sqlRow['Winner_Team'];
         $dataRow[] = $sqlRow['TID'];
         $dataRow[] = $sqlRow['Tournament'];
