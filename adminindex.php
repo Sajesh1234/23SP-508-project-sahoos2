@@ -70,23 +70,17 @@
 
         .box{
         
-          width:50%;
+        width:50%;
      	  height: 450px;
      	  top: 100px;
      	  color:white;
      	  position: fixed;
      	
      	}
-     	.box2 {
-     	  background:rgba(0, 0, 0, 0.5);
-     	  width:50%;
-     	  height: 450px;
-     	  padding: 100px;
-     	  color:white;
-     	  position: absolute;
-     	  top: 0px;
-     	  right: 0px;  	
-     	} 
+     	.box2{
+     	padding: 10px;
+        background:#AAA3B8;
+     	}
      	  
             
         input { 
@@ -110,32 +104,36 @@
         }
         input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
 
-        table {
-          border-collapse: collapse;
-          width: 100%;
-            }   
-        th, td {
-          padding: 8px;
-          text-align: left;
-          color:white;
-          font-weight:normal;
-          }
-          
-          a:link { text-decoration: none; 
-          color:white;}
-          a:visited { text-decoration: none;
-          color:white; }
-          a:hover {
-            color: grey;
-               background-color: transparent;
-               text-decoration: none;}
-          a:active {
-            color: white;
-            background-color: transparent;
-            text-decoration: none;}
-
-
+table {
+  border-collapse: collapse;
+  width: 100%;
 }
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ddd;
+  background:#C9C9C9;
+  color: black;
+}
+
+th {
+  background-color: #B0B0B0;
+}
+.link:link { 
+          text-decoration: none; 
+          color:white;}
+        .link:hover {
+           color: grey;
+           background-color: grey;
+           text-decoration: none;}
+          .link:link { 
+            text-decoration: none; 
+            color:white;}
+          .link:hover {
+            color: grey;
+            background-color: grey;
+            text-decoration: none;}
 </style>
 
 
@@ -157,15 +155,42 @@
 
 <div class = "admin">
 <div class = "box">
-    <h2>Admin Tools</h2>
-    <ul>
-    	<li><a href="modify-users.php">Modify Users</a></li>
-    	<li><a href="modify-players.php">Modify Player W/L and Team Info</a></li>
-    	<li><a href="modify-cards.php">Add and Edit Cards</a></li>
-    	<li><a href="modify-locations.php">Add and Edit Tournament locations</a></li>
-    	<li><a href="modify-tournaments.php">Add and Edit Tournaments</a></li>
-    	<li><a href="modify-matches.php">Add and Edit Matches</a></li>
-    </ul>
+<div class = "box2">
+    <h2 style="color: black;">Admin Tools</h2>    
+    <table>
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+      <td>Modify Users</td>
+      <td><a class ="link" href="modify-users.php" style="padding-left:10px; color: black;">EDIT</a></td>
+    </tr>
+    <tr>
+      <td>Modify Player W/L and Team Info</td>
+      <td><a class ="link" href="modify-players.php" style="padding-left:10px; color: black;">EDIT</a></td>
+    </tr>
+    <tr>
+      <td>Add and Edit Cards</td>
+      <td><a class ="link" href="modify-cards.php" style="padding-left:10px; color: black;">EDIT</a></td>
+    </tr>
+    <tr>
+      <td>Add and Edit Tournament locations</td>
+      <td><a class ="link" href="modify-locations.php" style="padding-left:10px; color: black;">EDIT</a></td>
+    </tr>
+    <tr>
+      <td>Add and Edit Tournaments</td>
+      <td><a class ="link" href="modify-tournaments.php" style="padding-left:10px; color: black;">EDIT</a></td>
+    </tr>
+    <tr>
+      <td>Add and Edit Matches</td>
+      <td><a class ="link" href="modify-matches.php" style="padding-left:10px; color: black;">EDIT</a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 </div>
 
