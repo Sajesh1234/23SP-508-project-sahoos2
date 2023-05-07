@@ -96,7 +96,7 @@
       <div class="carousel-caption d-none d-md-block">
       <div class ="box">
         <h1>Blue Eyes White Dragon</h1>
-        <p>Some representative placeholder content for the first slide.</p>
+        <p>Deep in the snowy mountains, there lived a mystical dragon. Its scales were white as snow. It has never been caught because this mystical dragon posses the power to bend reality it self.</p>
         </div>
       </div>
     </div>
@@ -105,7 +105,7 @@
       <div class="carousel-caption d-none d-md-block">
       <div class ="box">
         <h1>Enchanted Armor</h1>
-        <p>Some representative placeholder content for the second slide.</p>
+        <p>An armor that has been enchanted with Protection, Fire Resistance, Depth Strider, Frost Walker, Soul Speed enchantments, and is a living weapon that will destory anything that gets in its way. </p>
         </div>
       </div>
     </div>
@@ -114,7 +114,7 @@
       <div class="carousel-caption d-none d-md-block">
       <div class ="box">
         <h1>Ghast</h1>
-        <p>Some representative placeholder content for the third slide.</p>
+        <p>A ghastly creature, that roams the underworld, and attacks anything that does not belong in the underwolrd.</p>
         </div>
       </div>
     </div>
@@ -123,7 +123,7 @@
       <div class="carousel-caption d-none d-md-block">
       <div class ="box">
         <h1>Blademaster</h1>
-        <p>Some representative placeholder content for the third slide.</p>
+        <p>A skilled swordsman and a warrior that has no equal. He has spent years honing his skills, mastering his techniques that has been passed down to him. With his blade he has set out to protect his homeland from destruction.</p>
         </div>
       </div>
     </div>
@@ -132,7 +132,7 @@
       <div class="carousel-caption d-none d-md-block">
       <div class ="box">
         <h1>Giant</h1>
-        <p>Some representative placeholder content for the third slide.</p>
+        <p>A colossal figure, who is as tall as a mountain. The giant shakes the earth with every step he takes. It is a force to be reckoned with, feared by even the bravest of warriors.</p>
         </div>
       </div>
     </div>
@@ -141,7 +141,7 @@
       <div class="carousel-caption d-none d-md-block">
       <div class ="box"> 
         <h1>Mage Doctorate</h1>
-        <p>Some representative placeholder content for the third slide.</p>
+        <p>A mage that is considered cray by some because of her smile. She spends her days making strange potions and casting spells that heal people. She also uses her magic to protect people close to her.</p>
         </div>
       </div>
     </div>
@@ -149,8 +149,8 @@
       <img class = "imagesfit" src="images/Wyrmling2.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
       	<div class ="box">
-        <h1>Third slide label</h1>
-        <p>Some representative placeholder content for the third slide.</p>
+        <h1>Wyrmling</h1>
+        <p>A young draon, small and vulnerable in apperance. But dont let the appearance fool you, it posses the same powers as an adult.</p>
         </div>
       </div>
     </div>
