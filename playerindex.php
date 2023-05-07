@@ -67,8 +67,8 @@
      	  height: 50%;
      	  padding: 100px;
      	  color:white;
-     	  position: fixed;
-     	  overflow: hidden;
+     	  position: sticky;
+     	 
      	
      	}
      	.box2 {
@@ -80,17 +80,17 @@
      	  position: fixed;
      	  top: 0px;
      	  right: 0px;  	
-     	  overflow: hidden;
+     	  
      	} 
      	.box3 {
      	  background:rgba(0, 0, 0, 0.5);
      	  width:50%;
      	  height: 50%;
      	  color:white;
-     	  position: fixed;
+     	  position: sticky;
      	  bottom: 0px;
      	  left: 0px;  
-     	  overflow: hidden;	
+     	  
      	} 
      	.box4 {
      	  background:rgba(0, 0, 0, 0.5);
@@ -100,7 +100,7 @@
      	  position: fixed;
      	  bottom: 0px;
      	  right: 0px;
-     	  overflow: hidden;  	
+     	    	
      	}  
      	  
             
@@ -174,7 +174,7 @@
 .btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] { filter: none; background-color: #4a77d4; }
 .move {
     top: 10px;
-    right:10px;
+    right:100px;
     position: absolute;
 
 }
