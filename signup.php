@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>TCG database Login</title>
+<title>TCG database SignUp</title>
 <?php require_once('header.php'); ?>
 </head>
 
@@ -11,6 +11,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	// Check that passwords match
 	// TODO other checks (email formatting)
 	if($_POST['p'] == $_POST['pr']) {
+	    
+	    if ($_POST['acc']== '') {
+	        $error_msg = "Error: Please select a valid user type";
+	    }else{
 		// Construct INSERT
         $stmt = $conn->prepare("INSERT INTO Users (Email_Address, first_name, last_name, date_of_birth, type, password_hash) VALUES (:email, :first, :last, :dob, :type, :hash)");
         $stmt->bindValue(':email', $_POST['email']);
@@ -22,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 		$hash = password_hash($_POST['p'], PASSWORD_DEFAULT);
         $stmt->bindValue(':hash', $hash);
         $stmt->execute();
-
+	    }
 		// Insert into player or ref tables as appropriate
 		if ($_POST['acc'] == "Player") {
 			$stmt = $conn->prepare("INSERT INTO Player (Person_ID, Wins, Draws, Losses, Play_count, Team) VALUES (:email, 1, 1, 1, 3, NULL)");
@@ -54,7 +58,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 				header("Location: playerindex");
 			}
 			else {
-				header("Location: index");
+			    $error_msg = "Pick a Player or a Ref";
 			}
 		}
 	}
@@ -186,7 +190,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 			<input type="password" name="pr" placeholder ="Re-enter Password" required = "required" />
 			<label for="acc">Account Type:</label>
 			<select id="acc" name = "acc">
-				<option value = "">N/A</option>
+				<option value = "">Choose a Type</option>
 				<option value = "Player">Player</option>
 				<option value = "Ref">Referee</option>
 			</select>

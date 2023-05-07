@@ -71,7 +71,7 @@ tbody td:nth-child(even) {
 <div class="matches">
 	<h4 style = "text-align:center; color: white;">Match Information</h4>
         	
-	<div>
+	<div class = "box">
 		<table id="table-match" class="table table-bordered table-striped">
 			<thead>
 				<tr>
