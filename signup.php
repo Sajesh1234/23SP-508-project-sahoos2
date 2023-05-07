@@ -190,7 +190,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 			<input type="password" name="pr" placeholder ="Re-enter Password" required = "required" />
 			<label for="acc">Account Type:</label>
 			<select id="acc" name = "acc">
-				<option value = "">N/A</option>
+				<option value = "">Choose a Type</option>
 				<option value = "Player">Player</option>
 				<option value = "Ref">Referee</option>
 			</select>
