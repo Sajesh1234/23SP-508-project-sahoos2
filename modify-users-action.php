@@ -116,7 +116,7 @@ function addUser()
                  (:Email_Address, :first_name, :last_name, :date_of_birth, :type)";
     
     $stmt = $conn->prepare($sqlQuery);
-    $stmt->bindValue(':Email_Address', $_POST["Email_Address"]);
+    $stmt->bindValue(':Email_Address', $_POST["email"]);
     $stmt->bindValue(':first_name', $_POST["firstname"]);
     $stmt->bindValue(':last_name', $_POST["lastname"]);
     $stmt->bindValue(':date_of_birth', $_POST["date_of_birth"]);
