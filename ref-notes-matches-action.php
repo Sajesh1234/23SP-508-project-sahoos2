@@ -21,8 +21,6 @@ function listMatches()
         $sqlQuery .= 'ORDER BY ID ASC ';
     }
     
-    $numberRows = $stmt->rowCount();
-    
     if ($_POST["length"] != - 1) {
         $sqlQuery .= 'LIMIT ' . $_POST['start'] . ', ' . $_POST['length'];
     }
@@ -30,6 +28,8 @@ function listMatches()
     $stmt = $conn->prepare($sqlQuery);
     $stmt->bindvalue(':Ref', $_SESSION['user_ID']);
     $stmt->execute();
+    
+    $numberRows = $stmt->rowCount();
     
     $dataTable = array();
     
