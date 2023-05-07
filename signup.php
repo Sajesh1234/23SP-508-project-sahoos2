@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>TCG database Login</title>
+<title>TCG database SignUp</title>
 <?php require_once('header.php'); ?>
 </head>
 
