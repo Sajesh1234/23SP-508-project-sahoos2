@@ -123,7 +123,8 @@ function addMatch()
                      (Game_Match, Player)
                      VALUES
                      (:ID, :Player)";
-    
+        
+        echo $player;
         $stmt = $conn->prepare($sqlQuery);
         $stmt->bindValue(':Winner', $_POST["ID"]);
         $stmt->bindValue(':Player', $player);
