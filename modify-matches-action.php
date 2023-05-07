@@ -159,13 +159,14 @@ function deleteMatch()
     
     if ($_POST["ID"]) {
         
-        $sqlQuery = "DELETE FROM Game_Match WHERE ID = :ID";
+        
+        $sqlQuery = "DELETE FROM Match_Players WHERE Game_Match = :ID";
         
         $stmt = $conn->prepare($sqlQuery);
         $stmt->bindValue(':ID', $_POST["ID"]);
         $stmt->execute();
-        
-        $sqlQuery = "DELETE FROM Match_Players WHERE Game_Match = :ID";
+
+        $sqlQuery = "DELETE FROM Game_Match WHERE ID = :ID";
         
         $stmt = $conn->prepare($sqlQuery);
         $stmt->bindValue(':ID', $_POST["ID"]);
