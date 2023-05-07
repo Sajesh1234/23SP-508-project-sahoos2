@@ -54,19 +54,31 @@ tbody td:nth-child(even) {
         $stmt->execute();
 	    echo $stmt->fetch()[0] ?> </h4>
 	<div class ="box">
-		<table id="table-loc" class="table table-bordered table-striped">
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Year</th>
-					<th>Prize Money</th>
-					<th>Address</th>
-					<th>View Teams</th>
-					<th>View Matches</th>
-				</tr>
-
-			</thead>
-		</table>
+		<h1>VIEW INFO</h1>
+		<table>
+			<tr><th></th></tr>
+      		<tr><th>Address:
+                <?php echo $_GET['loc']; ?>
+            </th></tr>
+       		<tr><th>Max Capacity:
+                <?php
+            		$sqlQuery = 'SELECT IFNULL((SELECT Max_Capacity FROM Tournament_Location WHERE Address = :loc), (SELECT "Unavailable")) AS Max_Capacity';
+            		$stmt = $conn->prepare($sqlQuery);
+                    $stmt->bindValue(':loc', $_GET['loc']);
+            		$stmt->execute();
+            		echo "" . $stmt->fetch()["Max_Capacity"];
+                ?>
+            </th></tr>
+       		<tr><th>Available Tables:
+                <?php
+            		$sqlQuery = 'SELECT IFNULL((SELECT Number_of_Tables FROM Tournament_Location WHERE Address = :loc), (SELECT "Unavailable")) AS Number_of_Tables';
+            		$stmt = $conn->prepare($sqlQuery);
+                    $stmt->bindValue(':loc', $_GET['loc']);
+            		$stmt->execute();
+            		echo "" . $stmt->fetch()["Number_of_Tables"];
+                ?>
+            </th></tr>  
+    	</table>
 	</div>
 </div>
 
