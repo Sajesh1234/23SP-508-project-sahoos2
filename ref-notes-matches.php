@@ -61,7 +61,7 @@ tbody td:nth-child(even) {
 #table-match tr > *:nth-child(1) {
 	display: none;
 }
-#table-match tr > *:nth-child(3) {
+#table-match tr > *:nth-child(5) {
 	display: none;
 }
 </style>
@@ -76,10 +76,11 @@ tbody td:nth-child(even) {
 			<thead>
 				<tr>
 					<th>ID</th>
+					<th>Players</th>
 					<th>Winner</th>
+					<th>Winner's Team</th>
 					<th>TID</th>
 					<th>Tournament</th>
-					<th>Ref</th>
 					<th>Ref Notes</th>
 					<th>Actions</th>
 				</tr>

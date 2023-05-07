@@ -12,7 +12,7 @@ function listMatches()
     $sqlQuery = "SELECT * FROM Match_Admin WHERE Ref = :Ref ";
     
     if (! empty($_POST["search"]["value"])) {
-       $sqlQuery .= 'AND (Winner LIKE "%' . $_POST["search"]["value"] . '%" OR Tournament LIKE "%' . $_POST["search"]["value"] . '%" OR Ref LIKE "%' . $_POST["search"]["value"] . '%" OR Ref_notes LIKE "%' . $_POST["search"]["value"] . '%") ';
+       $sqlQuery .= 'AND (Winner LIKE "%' . $_POST["search"]["value"] . '%" OR Tournament LIKE "%' . $_POST["search"]["value"] . '%" OR Winner_Team LIKE "%' . $_POST["search"]["value"] . '%" OR Ref_notes LIKE "%' . $_POST["search"]["value"] . '%") ';
     }
     
     if (! empty($_POST["order"])) {
@@ -37,10 +37,11 @@ function listMatches()
         $dataRow = array();
         
         $dataRow[] = $sqlRow['ID'];
+        $dataRow[] = $sqlRow['Players'];
         $dataRow[] = $sqlRow['Winner'];
+        $dataRow[] = $sqlRow['Winner_Team'];
         $dataRow[] = $sqlRow['TID'];
         $dataRow[] = $sqlRow['Tournament'];
-        $dataRow[] = $sqlRow['Ref'];
         $dataRow[] = $sqlRow['Ref_notes'];
         
         $dataRow[] = '<button type="button" name="update" ID="' . $sqlRow["ID"] . '" class="btn btn-warning btn-sm update">Ref Notes</button>';
