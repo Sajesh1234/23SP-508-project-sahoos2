@@ -25,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 		// Insert into player or ref tables as appropriate
 		if ($_POST['acc'] = "Player") {
-			$stmt = $conn->prepare("INSERT INTO Player (Person_ID, Wins, Draws, Losses, Play_count) VALUES (:email, 1, 1, 1, 3)");
+			$stmt = $conn->prepare("INSERT INTO Player (Person_ID, Wins, Draws, Losses, Play_count, Team) VALUES (:email, 1, 1, 1, 3, NULL)");
 			$stmt->bindValue(':email', $_POST['email']);
 			$stmt->execute();
 		} elseif ($_POST['acc'] = "Ref") {
