@@ -112,6 +112,19 @@ input {
 }
 input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
  
+ .error{
+    position:center;
+    margin:auto;
+    width: 100%;
+    text-align: center;
+}
+.box{
+     	background:rgba(255, 0, 0, 0.6);
+     	width:100%;
+     	padding: 25px;
+     	color:white;
+     	
+     	}
 
 </style>
 
@@ -122,6 +135,9 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 <form method="post">
 <input type="text" name="email" placeholder="Email Address" required="required" />
 <input type="password" name="password" placeholder="Password" required="required" />
+				<?php if (isset($_SESSION['error'])) { ?>
+    			<p class="error box"><?php echo $_SESSION['error']; ?></p>
+  				<?php } ?>
 <button type="submit" class="btn btn-primary btn-block btn-large">LOGIN</button>
 <a href="signup" class="btn btn-primary btn-block btn-large">SIGN UP</a>
 </form>

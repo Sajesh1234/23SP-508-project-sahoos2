@@ -1,7 +1,15 @@
 <html>
 <head>
 <title>TCG Admin - Users</title>
-<?php require_once('header.php'); ?>
+<?php require_once('header.php'); 
+ require_once ('login-locked.php');
+
+if (isset($_SESSION['user_ID']) && isset($_SESSION['user_type'])) {
+    if ($_SESSION['user_type'] != "Admin") {
+        header ("Location: index");
+    }
+}
+?>
 
 <!-- Font Awesome library -->
 <script src="https://kit.fontawesome.com/aec5ef1467.js"></script>
