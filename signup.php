@@ -23,6 +23,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindValue(':hash', $hash);
         $stmt->execute();
 
+		// Insert into player or ref tables as appropriate
+		if ($_POST['acc'] = "Player") {
+			$stmt = $conn->prepare("INSERT INTO Player (Person_ID, Wins, Draws, Losses, Play_count) VALUES (:email, 0, 0, 0, 0)");
+			$stmt->bindValue(':email', $_POST['email']);
+			$stmt->execute();
+		} elseif ($_POST['acc'] = "Ref") {
+			$stmt = $conn->prepare("INSERT INTO Ref (Person_ID) VALUES (:email)");
+			$stmt->bindValue(':email', $_POST['email']);
+			$stmt->execute();
+
+		}
+
         // Redirect to main page 
         header("Location: index.php");
 	}
