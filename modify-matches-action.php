@@ -126,7 +126,7 @@ function addMatch()
         
         echo $player;
         $stmt = $conn->prepare($sqlQuery);
-        $stmt->bindValue(':Winner', $_POST["ID"]);
+        $stmt->bindValue(':ID', $_POST["ID"]);
         $stmt->bindValue(':Player', $player);
         $stmt->execute();
     }
