@@ -60,7 +60,7 @@ tbody td:nth-child(even) {
       		<tr><th>Address:
                 <?php echo $_GET['loc']; ?>
             </th></tr>
-      		<tr><th><a href="<?php echo "https://www.google.com/maps/place/" . $_GET['loc'] ; ?>">Directions</a></th></tr>
+      		<tr><th><a target="_blank" rel="noopener noreferrer" href="<?php echo "https://www.google.com/maps/place/" . $_GET['loc'] ; ?>">Directions</a></th></tr>
        		<tr><th>Max Capacity:
                 <?php
             		$sqlQuery = 'SELECT IFNULL((SELECT Max_Capacity FROM Tournament_Location WHERE Address = :loc), (SELECT "Unavailable")) AS Max_Capacity';
