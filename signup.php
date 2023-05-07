@@ -11,6 +11,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	// Check that passwords match
 	// TODO other checks (email formatting)
 	if($_POST['p'] == $_POST['pr']) {
+	    
+	    if ($_POST['acc']== '') {
+	        $error_msg = "Error: Please select a valid user type";
+	    }else{
 		// Construct INSERT
         $stmt = $conn->prepare("INSERT INTO Users (Email_Address, first_name, last_name, date_of_birth, type, password_hash) VALUES (:email, :first, :last, :dob, :type, :hash)");
         $stmt->bindValue(':email', $_POST['email']);
@@ -22,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 		$hash = password_hash($_POST['p'], PASSWORD_DEFAULT);
         $stmt->bindValue(':hash', $hash);
         $stmt->execute();
-
+	    }
 		// Insert into player or ref tables as appropriate
 		if ($_POST['acc'] == "Player") {
 			$stmt = $conn->prepare("INSERT INTO Player (Person_ID, Wins, Draws, Losses, Play_count, Team) VALUES (:email, 1, 1, 1, 3, NULL)");
