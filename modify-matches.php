@@ -105,6 +105,18 @@ tbody td:nth-child(even) {
 				</div>
 				<div class="modal-body">
 					<div class="form-group">						            			
+						<label>Players</label>
+						<select class="form-control" id="Players" multiple>
+            			    <?php
+            			        $sqlQuery = 'SELECT Email_Address FROM Users WHERE type = "Player" ORDER BY Email_Address ASC';
+            			        $stmt = $conn->prepare($sqlQuery);
+            			        $stmt->execute();
+            			        while ($row = $stmt->fetch()) {
+            			            echo "<option value=\"" . $row["Email_Address"] . "\">" . $row["Email_Address"] . "</option>";
+            			        }
+                            ?>
+            			</select>	
+						
 						<label>Winner</label>
 						<select class="form-control" id="Winner">
             			    <?php
