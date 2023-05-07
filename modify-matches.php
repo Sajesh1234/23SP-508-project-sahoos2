@@ -105,7 +105,7 @@ tbody td:nth-child(even) {
 				</div>
 				<div class="modal-body">
 					<div class="form-group">						            			
-						<label>Players</label>
+						<label>Players (Hold CTRL or CMD to select multiple)</label>
 						<select class="form-control" id="Players" multiple>
             			    <?php
             			        $sqlQuery = 'SELECT Email_Address FROM Users WHERE type = "Player" ORDER BY Email_Address ASC';

@@ -37,6 +37,7 @@ $(document).ready(function(){
 			data:{
 				// Copy variables from the modal (popup) to send it to the POST
 				ID: $('#ID').val(),
+				Players: $('#Players').val(),
 				Winner: $('#Winner').val(),
 				TID: $('#Tournament').val(),
 				Ref: $('#Ref').val(),
