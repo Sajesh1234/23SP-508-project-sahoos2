@@ -54,7 +54,7 @@ tbody td:nth-child(even) {
         $stmt->execute();
 	    echo $stmt->fetch()[0] ?> </h4>
 	<div class ="box">
-		<h1>VIEW INFO</h1>
+		<h3>VIEW INFO</h3>
 		<table>
 			<tr><th></th></tr>
       		<tr><th>Address:
