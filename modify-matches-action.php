@@ -99,6 +99,26 @@ function updateMatch()
         $stmt->bindValue(':Ref_notes', $_POST["Ref_notes"]);
         $stmt->bindValue(':ID', $_POST["ID"]);
         $stmt->execute();
+
+
+        $sqlQuery = "DELETE FROM Match_Players WHERE Game_Match = :ID";
+        
+        $stmt = $conn->prepare($sqlQuery);
+        $stmt->bindValue(':ID', $_POST["ID"]);
+        $stmt->execute();
+
+        foreach ($_POST['Players'] as $player) {
+            $sqlQuery = "INSERT INTO Match_Players
+                         (Game_Match, Player)
+                         VALUES
+                         (:ID, :Player)";
+        
+            //echo $player;
+            $stmt = $conn->prepare($sqlQuery);
+            $stmt->bindValue(':ID', $_POST['ID']);
+            $stmt->bindValue(':Player', $player);
+            $stmt->execute();
+        }
     }
 }
 
@@ -140,6 +160,12 @@ function deleteMatch()
     if ($_POST["ID"]) {
         
         $sqlQuery = "DELETE FROM Game_Match WHERE ID = :ID";
+        
+        $stmt = $conn->prepare($sqlQuery);
+        $stmt->bindValue(':ID', $_POST["ID"]);
+        $stmt->execute();
+        
+        $sqlQuery = "DELETE FROM Match_Players WHERE Game_Match = :ID";
         
         $stmt = $conn->prepare($sqlQuery);
         $stmt->bindValue(':ID', $_POST["ID"]);
