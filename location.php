@@ -45,15 +45,6 @@ tbody td:nth-child(even) {
 <body>
 
 <div class="tourna">
-	<h4 style = "text-align:center; color: white;"><?php 
-		<?php 
-	    $sqlQuery = "SELECT NAME
-                 FROM Tournament_Location
-                 WHERE Address = :Address";
-        $stmt = $conn->prepare($sqlQuery);
-        $stmt->bindvalue(':Address', $_GET['loc']);
-        $stmt->execute();
-	    echo $stmt->fetch()[0] ?> </h4>
 	<div class ="box">
 		<table id="table-loc" class="table table-bordered table-striped">
 			<thead>
