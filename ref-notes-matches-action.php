@@ -2,15 +2,17 @@
 require_once ('connection.php');
 
 global $conn;
+// Start or resume session variables
+session_start();
 
 function listMatches()
 {
     global $conn;
     
-    $sqlQuery = "SELECT * FROM Match_Admin ";
+    $sqlQuery = "SELECT * FROM Match_Admin WHERE Ref = :Ref ";
     
     if (! empty($_POST["search"]["value"])) {
-       $sqlQuery .= 'WHERE (Winner LIKE "%' . $_POST["search"]["value"] . '%" OR Tournament LIKE "%' . $_POST["search"]["value"] . '%" OR Ref LIKE "%' . $_POST["search"]["value"] . '%" OR Ref_notes LIKE "%' . $_POST["search"]["value"] . '%") ';
+       $sqlQuery .= 'AND (Winner LIKE "%' . $_POST["search"]["value"] . '%" OR Tournament LIKE "%' . $_POST["search"]["value"] . '%" OR Ref LIKE "%' . $_POST["search"]["value"] . '%" OR Ref_notes LIKE "%' . $_POST["search"]["value"] . '%") ';
     }
     
     if (! empty($_POST["order"])) {
@@ -20,6 +22,7 @@ function listMatches()
     }
     
     $stmt = $conn->prepare($sqlQuery);
+    $stmt->bindvalue(':Ref', $_SESSION['user_ID']);
     $stmt->execute();
     
     $numberRows = $stmt->rowCount();

@@ -299,6 +299,14 @@
 			<div class = 'move'>
 			<a href= 'list-decks' class = "btn btn-primary btn-block btn-large" > CLICK HERE TO EDIT</a>
 			</div>
+
+
+
+
+    <a href="player-matches">View Your Matches</a>
+
+
+
 	<div id="carouselExampleDark" class="carousel carousel-dark slide">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
