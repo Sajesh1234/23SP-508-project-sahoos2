@@ -81,7 +81,9 @@ tbody td:nth-child(even) {
 			<thead>
 				<tr>
 					<th>ID</th>
+					<th>Players</th>
 					<th>Winner</th>
+					<th>Winner's Team</th>
 					<th>TID</th>
 					<th>Tournament</th>
 					<th>Ref</th>
