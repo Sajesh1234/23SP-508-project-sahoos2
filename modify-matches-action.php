@@ -109,9 +109,7 @@ function addMatch()
     $sqlQuery = "INSERT INTO Game_Match
                  (Winner, Tournament, Ref, Ref_notes)
                  VALUES
-                 (:Winner, :TID, :Ref, :Ref_notes);
-                 
-                 SELECT LAST_INSERT_ID(); ";
+                 (:Winner, :TID, :Ref, :Ref_notes);";
     
     $stmt = $conn->prepare($sqlQuery);
     $stmt->bindValue(':Winner', $_POST["Winner"]);
@@ -119,7 +117,7 @@ function addMatch()
     $stmt->bindValue(':Ref', $_POST["Ref"]);
     $stmt->bindValue(':Ref_notes', $_POST["Ref_notes"]);
     $stmt->execute();
-    $Match_ID = json_encode($stmt->fetch());
+    $Match_ID = $conn->lastInsertId());
     echo $Match_ID;
     
     foreach ($_POST['Players'] as $player) {
