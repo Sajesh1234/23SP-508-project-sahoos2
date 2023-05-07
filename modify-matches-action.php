@@ -117,7 +117,7 @@ function addMatch()
     $stmt->bindValue(':Ref', $_POST["Ref"]);
     $stmt->bindValue(':Ref_notes', $_POST["Ref_notes"]);
     $stmt->execute();
-    $Match_ID = $conn->lastInsertId());
+    $Match_ID = $conn->lastInsertId();
     echo $Match_ID;
     
     foreach ($_POST['Players'] as $player) {
