@@ -64,39 +64,43 @@
         .box{
      	  background:rgba(0, 0, 0, 0.5);
           width:50%;
-     	  height: 46%;
+     	  height: 50%;
      	  padding: 100px;
      	  color:white;
      	  position: fixed;
+     	  overflow: hidden;
      	
      	}
      	.box2 {
      	  background:rgba(0, 0, 0, 0.5);
      	  width:50%;
-     	  height: 46%;
-     	  padding: 100px;
+     	  height: 50%;
+     	  padding-top:100px;
      	  color:white;
      	  position: fixed;
      	  top: 0px;
      	  right: 0px;  	
+     	  overflow: hidden;
      	} 
      	.box3 {
      	  background:rgba(0, 0, 0, 0.5);
      	  width:50%;
-     	  height: 54%;
+     	  height: 50%;
      	  color:white;
      	  position: fixed;
      	  bottom: 0px;
-     	  left: 0px;  	
+     	  left: 0px;  
+     	  overflow: hidden;	
      	} 
      	.box4 {
      	  background:rgba(0, 0, 0, 0.5);
      	  width:50%;
-     	  height: 54%;
+     	  height: 50%;
      	  color:white;
      	  position: fixed;
      	  bottom: 0px;
-     	  right: 0px;  	
+     	  right: 0px;
+     	  overflow: hidden;  	
      	}  
      	  
             
@@ -139,15 +143,16 @@
           color:white;
           }
           .imagesfit{
-     	height:100%;
-     	width:100%; 
-     	margin-left: auto;
-        margin-right: auto;
+          
+     	height:80%;
+     	width:80%; 
+     	margin-left: 100;
+        margin-right: 20;
      	filter:brightness(80%);
      	}
      	.imagesfit2{
-     	height:100%;
-     	width:100%; 
+     	height:80%;
+     	width:80%; 
      	margin-left: auto;
         margin-right: auto;
      	filter:brightness(80%);
@@ -173,6 +178,21 @@
     position: absolute;
 
 }
+        .match-his:link { 
+          text-decoration: none; 
+          color:white;}
+        .match-his:hover {
+           color: grey;
+           background-color: grey;
+           text-decoration: none;}
+          .tourna-ment:link { 
+            text-decoration: none; 
+            color:white;}
+          .tourna-ment:hover {
+            color: grey;
+            background-color: grey;
+            text-decoration: none;}
+               
 
 </style>
 
@@ -182,7 +202,7 @@
 
 <header>
 	<div class ="logo">
-	<a href ="" >TCG DataBase</a>
+	<a href ="index" >TCG DataBase</a>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
@@ -289,6 +309,7 @@
                     ?>
                 </th></tr>    
     		</table>
+    		 <a class= "match-his" href="player-matches" style="padding-left:10px; color: white;">Click Here To View Your Matche History </a>
 		</div>
 	</div>
 </div>
@@ -302,12 +323,7 @@
 
 
 
-
-    <a href="player-matches">View Your Matches</a>
-
-
-
-	<div id="carouselExampleDark" class="carousel carousel-dark slide">
+	<div id="carouselExampleDark" class="carousel slide">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -357,7 +373,7 @@
 <div class = "ViewTournament">
 	<div class ="box4">
 		<div class="Tourna">
-			<h1 class = "tourna-ment"><a href = "tournaments" style = "text-decoration:none;color: white;">CLICK HERE TO SEE TOURNAMENTS</a></h1>
+			<h1 ><a class = "tourna-ment" href = "tournaments" style = "text-decoration:none;color: white;">CLICK HERE TO SEE TOURNAMENTS</a></h1>
 			<div id="carouselExampleDark" class="carousel carousel-dark slide">
   <div class="carousel-indicators">
   </div>

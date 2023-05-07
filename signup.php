@@ -54,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 				header("Location: playerindex");
 			}
 			else {
-				header("Location: index");
+			    $error_msg = "Pick a Player or a Ref";
 			}
 		}
 	}

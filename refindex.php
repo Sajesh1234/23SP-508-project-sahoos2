@@ -64,37 +64,37 @@
         .box{
      	  background:rgba(0, 0, 0, 0.5);
           width:100%;
-     	  height: 46%;
+     	  height: 50%;
      	  padding: 100px;
      	  color:white;
-     	  position: fixed;
+     	  position: absolute;
      	
      	}
      	.box2 {
      	  background:rgba(0, 0, 0, 0.5);
      	  width:50%;
-     	  height: 46%;
+     	  height: 50%;
      	  padding: 100px;
      	  color:white;
-     	  position: fixed;
+     	  position: absolute;
      	  top: 0px;
      	  right: 0px;  	
      	} 
      	.box3 {
      	  background:rgba(0, 0, 0, 0.5);
      	  width:50%;
-     	  height: 54%;
+     	  height: 50%;
      	  color:white;
-     	  position: fixed;
+     	  position: absolute;
      	  bottom: 0px;
      	  left: 0px;  	
      	} 
      	.box4 {
      	  background:rgba(0, 0, 0, 0.5);
      	  width:50%;
-     	  height: 54%;
+     	  height: 50%;
      	  color:white;
-     	  position: fixed;
+     	  position: absolute;
      	  bottom: 0px;
      	  right: 0px;  	
      	}  
@@ -145,8 +145,8 @@
      	filter:brightness(80%);
      	}
      	.imagesfit2{
-     	height:100%;
-     	width:100%; 
+     	height:80%;
+     	width:80%; 
      	margin-left: auto;
         margin-right: auto;
      	filter:brightness(80%);
@@ -162,13 +162,23 @@
  *margin-left: .3em; 
  }
  
+            .tourna-ment:link { 
+            text-decoration: none; 
+            color:white;}
+          .tourna-ment:hover {
+            color: grey;
+            background-color: grey;
+            text-decoration: none;}
+               
+               
+ 
 .btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] { background-color: #2644c9; }
 .btn-primary, .btn-primary:hover { text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; }
 .btn-primary.active { color: rgba(255, 255, 255, 0.75); }
 .btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] { filter: none; background-color: #4a77d4; }
 .move {
     top: 10px;
-    right:10px;
+    right:350px;
     position: absolute;
 
 }
@@ -240,7 +250,7 @@
 <div class = "Cards">
 	<div class ="box3">
 		<div class="edit-cards">
-			<h1 class ='decks'>Notes</h1>
+			<h1 class ='decks'>Notes:</h1>
 			<div class = 'move'>
 			<a href= 'ref-notes-matches' class = "btn btn-primary btn-block btn-large" > CLICK HERE TO ADD NOTES TO YOUR MATCHES</a>
 			</div>
@@ -252,7 +262,7 @@
 <div class = "ViewTournament">
 	<div class ="box4">
 		<div class="Tourna">
-			<h1 class = "tourna-ment"><a href = "tournaments" style = "text-decoration:none;color: white;">CLICK HERE TO SEE TOURNAMENTS</a></h1>
+			<h1 ><a class = "tourna-ment" href = "tournaments" style = "text-decoration:none;color: white;">CLICK HERE TO SEE TOURNAMENTS</a></h1>
 			<div id="carouselExampleDark" class="carousel carousel-dark slide">
   <div class="carousel-indicators">
   </div>
